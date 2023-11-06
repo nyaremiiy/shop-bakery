@@ -1,0 +1,34 @@
+ul {
+  list-style: none;
+}
+
+.button {
+  border: 2px solid #819b57;
+  background: #819b57;
+  border-radius: 8px;
+  color: #faf4ea;
+}
+.button:hover {
+  background-color: transparent;
+  color: #465929;
+  cursor: pointer;
+}
+
+.link {
+  color: #faf4ea;
+}
+.link:hover {
+  color: #819b57;
+}
+
+.hero-title {
+  color: #faf4ea;
+}
+.hero-title .accent {
+  color: #819b57;
+}
+
+.advantages-list {
+  background-color: #819b57;
+  color: #faf4ea;
+}
