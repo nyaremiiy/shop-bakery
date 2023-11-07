@@ -32,6 +32,7 @@
   src: url('../fonts/poppins-v20-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* #endregion */
+
 /* #region Root */
 :root {
   --color-primary-light: #faf4ea;
@@ -41,12 +42,17 @@
   --color-brown: #a18268;
 }
 /* #endregion */
+
 /* #region Base styles */
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--color-primary-dark);
   line-height: normal;
   font-size: 18px;
+  margin: 0;
 }
 ul {
   list-style: none;
@@ -57,13 +63,41 @@ address {
 a {
   text-decoration: none;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+.section {
+  padding: 48px 0;
+}
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  left: -10000px;
+  height: 1px;
+  width: 1px;
+  top: auto;
+}
+.container {
+  max-width: 1288px;
+  padding: 0 24px;
+  margin: 0 auto;
+  width: 100%;
+}
 /* #endregion */
+
 /* #region Button */
 .button {
   border: 2px solid var(--color-brand-light);
   background: var(--color-brand-light);
   color: var(--color-primary-light);
   border-radius: 8px;
+  padding: 16px 32px;
   font-weight: 600;
 }
 .button:hover {
@@ -72,6 +106,7 @@ a {
   cursor: pointer;
 }
 /* #endregion */
+
 /* #region Navigation */
 .link {
   color: var(--color-primary-light);
@@ -82,9 +117,15 @@ a {
   color: #819b57;
 }
 /* #endregion */
-/* #region Hero title */
+
+/* #region Hero Section */
+.hero-section {
+  padding: 272px 0;
+}
 .hero-title {
   color: var(--color-primary-light);
+  text-align: center;
+  margin-bottom: 0;
   font-weight: 900;
   font-size: 128px;
 }
@@ -92,6 +133,39 @@ a {
   color: var(--color-brand-light);
 }
 /* #endregion */
+
+/* #region Tradition Section */
+.tradition-section {
+  padding-top: 96px;
+}
+.traditional-title {
+  margin-bottom: 42px;
+}
+/* #endregion */
+
+/* #region Chef Section */
+.chefs-title {
+  margin-bottom: 80px;
+}
+.chef-title {
+  margin-bottom: -16px;
+  font-weight: 600;
+  font-size: 40px;
+}
+/* #endregion */
+
+/* #region Formats Sections */
+.formats-title {
+  margin-bottom: 80px;
+}
+/* #endregion */
+
+/* #region Contact Section */
+.contact-title {
+  margin-bottom: 16px;
+}
+/* #endregion */
+
 /* #region Asvantages Section */
 .advantages-list {
   background-color: var(--color-brand-light);
@@ -107,6 +181,7 @@ a {
   text-transform: uppercase;
 }
 /* #endregion */
+
 /* #region Title Section */
 .section-title {
   font-weight: 900;
@@ -117,7 +192,8 @@ a {
   color: var(--color-brand-dark);
 }
 /* #endregion */
-/* #region footer */
+
+/* #region Footer */
 .address-link {
   color: var(--color-primary-light);
   font-size: 16px;
