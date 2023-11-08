@@ -144,6 +144,10 @@ header {
 
 /* #region Hero Section */
 .hero-section {
+  background-image: url('./../images/couple-in-bakery.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
   padding: 272px 0;
 }
 .hero-title {
