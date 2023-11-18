@@ -36,12 +36,13 @@
 /* #region Root */
 :root {
   --color-secondary-brown: #a18268;
-  --color-primary-light: #faf4ea;
+  --c-base-light: #faf4ea;
   --color-primary-dark: #31261a;
-  --color-brand-normal: #819b57;
+  --c-green-dark: #819b57;
   --color-brand-dark: #465929;
   --color-brand-light: cfcfbc;
   --color-brown: #a18268;
+  --f-name-logo: Gill Sans;
 }
 /* #endregion */
 
@@ -49,13 +50,17 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background-color: var(--color-primary-light);
+  /* background-color: var(--c-base-light); */
   font-family: 'Poppins', sans-serif;
   color: var(--color-primary-dark);
   line-height: normal;
   font-size: 18px;
   margin: 0;
+  background-color: #31261a;
 }
 ul {
   list-style: none;
@@ -76,6 +81,12 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+button {
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
 .section {
   padding: 48px 0;
@@ -105,51 +116,56 @@ p {
 /* #endregion */
 
 /* #region Header */
-header {
-  background-color: #a18268;
+.header {
+  padding-bottom: 32px;
+  padding-top: 32px;
 }
-.header-container {
+.header__container {
+  justify-content: space-between;
   align-items: center;
   display: flex;
-  gap: 40px;
 }
-.header-nav {
+/* #endregion */
+
+/* #region Logo */
+.logo {
+  cursor: pointer;
+  width: 108px;
+  height: 46px;
+}
+/* #endregion */
+
+/* #region Nav */
+.nav__list {
+  justify-content: space-between;
   align-items: center;
   display: flex;
-  flex-grow: 1;
-  gap: 40px;
-}
-.header-menu {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-grow: 1;
   gap: 64px;
+}
+.nav__link {
+  color: var(--c-base-light);
+}
+.nav__link:hover {
+  color: var(--c-green-dark);
 }
 /* #endregion */
 
 /* #region Button */
-.button {
-  border: 2px solid var(--color-brand-normal);
-  background: var(--color-brand-normal);
-  color: var(--color-primary-light);
-  border-radius: 8px;
+.btn-order-call {
+  border: 2px solid var(--c-green-dark);
+  background: var(--c-green-dark);
+  color: var(--c-base-light);
+  transition: all 0.3s;
   padding: 16px 32px;
+  border-radius: 8px;
   font-weight: 600;
 }
-.button:hover {
-  background-color: transparent;
-  color: var(--color-brand-dark);
-  cursor: pointer;
+.btn-order-call:hover {
+  background-color: var(--c-base-light);
+  color: var(--c-green-dark);
 }
-/* #endregion */
-
-/* #region Navigation */
-.link {
-  color: var(--color-primary-light);
-}
-.link:hover {
-  color: #819b57;
+.btn-order-call:active {
+  scale: 0.95;
 }
 /* #endregion */
 
@@ -162,14 +178,14 @@ header {
   padding: 272px 0;
 }
 .hero-title {
-  color: var(--color-primary-light);
+  color: var(--c-base-light);
   text-align: center;
   margin-bottom: 0;
   font-weight: 900;
   font-size: 128px;
 }
 .hero-title .accent {
-  color: var(--color-brand-normal);
+  color: var(--c-green-dark);
 }
 /* #endregion */
 
@@ -212,9 +228,21 @@ header {
 }
 .chef-person {
   border-radius: 4px 4px 4px 200px;
-  box-shadow: -16px 16px 0 0 var(--color-primary-light),
+  box-shadow: -16px 16px 0 0 var(--c-base-light),
     -16px 16px 0 2px var(--color-secondary-brown);
 }
+.chefs-list {
+  display: flex;
+  gap: 30px;
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+.chefs-item article {
+  display: flex;
+  gap: 30px;
+}
+
 /* #endregion */
 
 /* #region Formats Sections */
@@ -258,11 +286,11 @@ header {
 
 /* #region Asvantages Section */
 .advantages-section {
-  background-color: var(--color-brand-normal);
+  background-color: var(--c-green-dark);
   padding: 16px 0;
 }
 .advantages-list {
-  color: var(--color-primary-light);
+  color: var(--c-base-light);
   justify-content: center;
   font-weight: 300;
   font-size: 20px;
@@ -270,7 +298,7 @@ header {
   gap: 40px;
 }
 .advantages-text .accent {
-  color: var(--color-brand-normal);
+  color: var(--c-green-dark);
   font-weight: 600;
 }
 .advantages-text .uppercase {
@@ -301,7 +329,7 @@ header {
   background-size: cover;
 }
 .address-link {
-  color: var(--color-primary-light);
+  color: var(--c-base-light);
   font-size: 16px;
 }
 .address-copy {
