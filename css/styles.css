@@ -97,6 +97,9 @@ button {
 svg {
   width: 100%;
 }
+img {
+  width: 100%;
+}
 .section {
   padding: 48px 0;
 }
@@ -121,6 +124,9 @@ svg {
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+}
+.noscroll {
+  overflow: hidden;
 }
 /* #endregion */
 
@@ -231,7 +237,90 @@ svg {
 .burger {
   aspect-ratio: 1 / 1;
   cursor: pointer;
+  display: flex;
   width: 24px;
+}
+/* #endregion */
+
+/* #region Menu */
+.menu {
+  background-color: var(--c-base-light);
+  transition: all 0.3s;
+  padding: 16px 24px;
+  position: fixed;
+  z-index: 10;
+  left: 100%;
+  opacity: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+.menu--open {
+  opacity: 1;
+  left: 0;
+
+  @media screen and (min-width: 480px) {
+    left: 30%;
+  }
+}
+.menu__head {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+.menu__logo .logo__svg {
+  fill: var(--color-primary-dark);
+}
+.menu__body .nav {
+  padding-top: 32px;
+  display: block;
+}
+.menu__body .nav__list {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+.menu__body .nav__link {
+  color: var(--color-primary-dark);
+  position: relative;
+  font-size: 14px;
+}
+.menu__body .nav__link::before {
+  background-color: var(--c-green-dark);
+  border-radius: 30px;
+  position: absolute;
+  display: block;
+  bottom: -3px;
+  height: 2px;
+  width: 110%;
+  content: '';
+  left: 0;
+}
+.menu--open .nav__link::before {
+  animation-name: blink;
+  animation-duration: 1s;
+}
+@keyframes blink {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 110%;
+  }
+}
+.menu__img {
+  position: absolute;
+  width: 150px;
+  bottom: 0;
+  right: 0;
+}
+
+/* #endregion */
+
+/* #region Close Menu */
+.close-menu {
+  cursor: pointer;
 }
 /* #endregion */
 
@@ -435,5 +524,21 @@ svg {
 .address-copy {
   color: var(--color-brown);
   font-size: 14px;
+}
+/* #endregion */
+
+/* #region Blur Screen */
+.blur-screen {
+  backdrop-filter: blur(10px);
+  transition: all 0.2s;
+  position: fixed;
+  z-index: 9;
+  left: 100%;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+.blur-screen--active {
+  left: 0;
 }
 /* #endregion */
