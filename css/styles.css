@@ -119,6 +119,10 @@ button {
 .header {
   padding-bottom: 32px;
   padding-top: 32px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 .header__container {
   justify-content: space-between;
@@ -170,21 +174,27 @@ button {
 /* #endregion */
 
 /* #region Hero Section */
-.hero-section {
-  background-image: url('./../images/hero-section-bg.jpg');
+.s-hero {
+  background-image: linear-gradient(
+      103deg,
+      rgba(18, 18, 17, 0.78) 2.03%,
+      rgba(18, 18, 17, 0.6) 58.46%,
+      rgba(18, 18, 17, 0) 90.36%
+    ),
+    url('./../images/hero-section-bg.jpg');
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
   padding: 272px 0;
 }
-.hero-title {
+.s-hero__title {
   color: var(--c-base-light);
   text-align: center;
   margin-bottom: 0;
   font-weight: 900;
   font-size: 128px;
 }
-.hero-title .accent {
+.s-hero__title--green {
   color: var(--c-green-dark);
 }
 /* #endregion */
