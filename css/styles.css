@@ -221,7 +221,7 @@ svg {
     ),
     url('./../images/hero-section-bg.jpg');
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: 76% top;
   background-size: cover;
   padding: 272px 0;
 }
@@ -236,8 +236,12 @@ svg {
     font-size: 74px;
   }
   @media screen and (max-width: 768px) {
-    font-size: 64px;
     line-height: 66px;
+    font-size: 64px;
+  }
+  @media screen and (max-width: 480px) {
+    line-height: 58px;
+    font-size: 52px;
   }
 }
 .s-hero__title--green {
