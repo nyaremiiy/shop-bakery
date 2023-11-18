@@ -132,12 +132,22 @@ svg {
   right: 0;
   left: 0;
   top: 0;
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
 }
 .header__container {
   justify-content: space-between;
   align-items: center;
   display: flex;
   gap: 24px;
+}
+.header__order-call {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 /* #endregion */
 
@@ -199,7 +209,7 @@ svg {
     font-size: 14px;
   }
   @media screen and (max-width: 768px) {
-    display: none;
+    padding: 16px 24px;
   }
 }
 .btn-order-call:hover {
@@ -246,6 +256,14 @@ svg {
 }
 .s-hero__title--green {
   color: var(--c-green-dark);
+}
+.s-hero__order-call {
+  margin: 48px auto 0;
+  text-align: center;
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 /* #endregion */
 
