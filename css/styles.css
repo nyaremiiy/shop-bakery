@@ -149,6 +149,12 @@ svg {
     display: none;
   }
 }
+.header__burger {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
 /* #endregion */
 
 /* #region Logo */
@@ -221,6 +227,14 @@ svg {
 }
 /* #endregion */
 
+/* #region Burger */
+.burger {
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  width: 24px;
+}
+/* #endregion */
+
 /* #region Hero Section */
 .s-hero {
   background-image: linear-gradient(
@@ -234,6 +248,14 @@ svg {
   background-position: 76% top;
   background-size: cover;
   padding: 272px 0;
+  @media screen and (max-width: 768px) {
+    padding-top: 180px;
+    padding-bottom: 80px;
+  }
+  @media screen and (max-width: 480px) {
+    padding-top: 110px;
+    padding-bottom: 32px;
+  }
 }
 .s-hero__title {
   color: var(--c-base-light);
