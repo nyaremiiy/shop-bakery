@@ -43,6 +43,12 @@
   --color-brand-light: cfcfbc;
   --color-brown: #a18268;
   --f-name-logo: Gill Sans;
+  --screen-smin-phone: 320px;
+  --screen-smax-phone: 480px;
+  --screen--smin-tablet: 481px;
+  --screen--smax-tablet: 768px;
+  --screen--smin-desktop: 769px;
+  --screen--smax-desktop: 1279px;
 }
 /* #endregion */
 
@@ -88,6 +94,9 @@ button {
   outline: none;
   border: none;
 }
+svg {
+  width: 100%;
+}
 .section {
   padding: 48px 0;
 }
@@ -118,8 +127,8 @@ button {
 /* #region Header */
 .header {
   padding-bottom: 32px;
+  position: absolute;
   padding-top: 32px;
-  position: fixed;
   right: 0;
   left: 0;
   top: 0;
@@ -128,26 +137,47 @@ button {
   justify-content: space-between;
   align-items: center;
   display: flex;
+  gap: 24px;
 }
 /* #endregion */
 
 /* #region Logo */
 .logo {
   cursor: pointer;
+}
+.logo__svg {
   width: 108px;
   height: 46px;
+
+  @media screen and (max-width: 1279px) {
+    width: 78px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 72px;
+  }
 }
 /* #endregion */
 
 /* #region Nav */
+.nav {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
 .nav__list {
   justify-content: space-between;
   align-items: center;
   display: flex;
   gap: 64px;
+
+  @media screen and (max-width: 1279px) {
+    font-size: 14px;
+    gap: 38px;
+  }
 }
 .nav__link {
   color: var(--c-base-light);
+  white-space: nowrap;
 }
 .nav__link:hover {
   color: var(--c-green-dark);
@@ -163,6 +193,14 @@ button {
   padding: 16px 32px;
   border-radius: 8px;
   font-weight: 600;
+
+  @media screen and (max-width: 1279px) {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .btn-order-call:hover {
   background-color: var(--c-base-light);
@@ -193,6 +231,14 @@ button {
   margin-bottom: 0;
   font-weight: 900;
   font-size: 128px;
+
+  @media screen and (max-width: 1279px) {
+    font-size: 74px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 64px;
+    line-height: 66px;
+  }
 }
 .s-hero__title--green {
   color: var(--c-green-dark);
