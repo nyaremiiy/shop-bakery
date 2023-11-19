@@ -12,6 +12,9 @@
     <script src="./js/index.js" defer></script>
   </head>
   <body>
+    <!-- #region Svg sprite -->
+
+    <!-- #endregion -->
     <!-- #region Header -->
     <header class="header">
       <div class="container header__container">
@@ -338,13 +341,100 @@
         </nav>
       </div>
       <div class="menu__img">
-        <img src="./images/menu-bread.png" alt="Картинка з хлібом" />
+        <img
+          class="optional-img"
+          src="./images/menu-bread.png"
+          alt="Картинка з хлібом"
+        />
       </div>
     </div>
     <!-- #endregion -->
 
     <!-- #region Blur Screen -->
     <div class="blur-screen" id="js-blur-screen"></div>
+    <!-- #endregion -->
+
+    <!-- #region Modal window order call -->
+    <div class="w-call-order" id="js-order-window">
+      <div class="w-call-order__wrapper">
+        <div class="w-call-order__close" id="js-close-order-window">
+          <div class="close-menu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M8 8L16 16L24 8"
+                stroke="#31261A"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M8 24L16 16L24 24"
+                stroke="#31261A"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="w-call-order__body">
+          <h4 class="w-call-order__title">Замовити дзвінок</h4>
+          <div class="w-call-order__desc">
+            Залишіть заявку та наш спеціаліст зв'яжеться з Вами!
+          </div>
+          <div class="w-call-order__form">
+            <form>
+              <label class="w-call-order__label">
+                <input
+                  class="w-call-order__input"
+                  type="text"
+                  name="name"
+                  placeholder="Ім’я"
+                />
+              </label>
+              <label class="w-call-order__label">
+                <input
+                  class="w-call-order__input"
+                  type="tel"
+                  name="phone"
+                  placeholder="Телефон"
+                />
+              </label>
+              <label class="w-call-order__label">
+                <input
+                  class="w-call-order__input"
+                  type="text"
+                  name="email"
+                  placeholder="Електронна пошта"
+                />
+              </label>
+              <div class="w-call-order__btn">
+                <button class="btn-order-call" type="submit">
+                  <span>Замовити дзвінок</span>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="w-call-order__info">
+            Натискаючи на кнопку я погоджуюсь
+            <a class="w-call-order__link" href="#">
+              з політикою конфіденційності</a
+            >
+          </div>
+        </div>
+        <div class="w-call-order__img">
+          <img
+            class="optional-img"
+            src="./images/menu-bread.png"
+            alt="Картинка з хлібом"
+          />
+        </div>
+      </div>
+    </div>
     <!-- #endregion -->
   </body>
 </html>
