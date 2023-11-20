@@ -49,6 +49,8 @@
   --c-green-dark: #819b57;
   --color-brand-dark: #465929;
   --color-brand-light: cfcfbc;
+  --color-message-succeed: #318a37;
+  --color-white: #fff;
   --color-brown: #a18268;
   --f-name-logo: Gill Sans;
   --screen-smin-phone: 320px;
@@ -170,7 +172,7 @@ input {
 }
 .header__burger {
   display: block;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     display: none;
   }
 }
@@ -258,7 +260,7 @@ input {
 /* #region Menu */
 .menu {
   background-color: var(--c-base-light);
-  transition: all 0.3s;
+  transition: all 0.2s;
   padding: 16px 24px;
   position: fixed;
   z-index: 10;
@@ -385,7 +387,7 @@ input {
   margin: 48px auto 0;
   text-align: center;
   display: block;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     display: none;
   }
 }
@@ -560,7 +562,7 @@ input {
 
 /* #region Modal window order call */
 .w-call-order {
-  transition: all 0.4s;
+  transition: all 0.3s;
   position: fixed;
   padding: 32px;
   z-index: -1;
@@ -612,10 +614,10 @@ input {
   width: 100%;
 
   @media screen and (max-width: 768px) {
-    margin-top: 32px ;
+    margin-top: 32px;
   }
   @media screen and (max-width: 480px) {
-    margin-top: 10px ;
+    margin-top: 10px;
   }
 }
 .w-call-order__title {
@@ -657,7 +659,7 @@ input {
     margin-top: 32px;
   }
   @media screen and (max-width: 480px) {
-    margin-top: 10px ;
+    margin-top: 10px;
   }
 }
 .w-call-order__label {
@@ -719,4 +721,102 @@ input {
 .w-call-order__link:hover {
   color: var(--c-green-dark);
 }
+/* #endregion */
+
+/* #region Call accepted  */
+.call-accepted {
+  background-color: var(--color-message-succeed);
+  color: var(--color-white);
+  transform: translateX(-50%);
+  letter-spacing: 2px;
+  position: absolute;
+  width: fit-content;
+  border-radius: 8px;
+  visibility: hidden;
+  padding: 8px 16px;
+  display: block;
+  z-index: -1;
+  opacity: 0;
+  left: 50%;
+  top: 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+.call-accepted__message {
+  white-space: nowrap;
+}
+.call-accepted--show {
+  animation: m-succeed 2s;
+}
+@media screen and (min-width: 320px) {
+  @keyframes m-succeed {
+    0% {
+      visibility: visible;
+      opacity: 0;
+      top: 2%;
+      z-index: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+      top: 6%;
+    }
+    100% {
+      opacity: 0;
+      z-index: 1;
+    }
+  }
+}
+@media screen and (min-width: 480px) {
+  @keyframes m-succeed {
+    0% {
+      visibility: visible;
+      opacity: 0;
+      top: 6%;
+      z-index: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+      top: 9%;
+    }
+    100% {
+      opacity: 0;
+      z-index: 1;
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  @keyframes m-succeed {
+    0% {
+      visibility: visible;
+      opacity: 0;
+      top: 10%;
+      z-index: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+      top: 15%;
+    }
+    100% {
+      opacity: 0;
+      z-index: 1;
+    }
+  }
+}
+
 /* #endregion */

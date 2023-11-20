@@ -1,7 +1,7 @@
 const menu = document.getElementById('js-menu');
 const burger = document.getElementById('js-burger');
 const closeMenuIcon = document.getElementById('js-close-menu');
-const menuLinks = document.querySelectorAll('.nav__link');
+const menuLinks = document.querySelectorAll('.nav__link--menu');
 const blurScreen = document.getElementById('js-blur-screen');
 const btnOrderCall = document.querySelectorAll('.btn-order-call');
 const orderWindow = document.getElementById('js-order-window');
@@ -80,7 +80,7 @@ function toggleElements() {
   toggleMenuClass();
 }
 
-/** 
+/**
  * Функція відкриває модальне вікно для замовлення.
  */
 function openModalOrderWindow() {
@@ -88,7 +88,7 @@ function openModalOrderWindow() {
     btn.addEventListener('click', () => {
       toggleModalWindowOrder();
     });
-  })
+  });
 }
 
 openModalOrderWindow();
@@ -96,8 +96,8 @@ openModalOrderWindow();
 /**
  * Функція видаляє та додає клас до модального вікна.
  */
-function toggleModalWindowOrder () {
-  orderWindow.classList.toggle('w-call-order--open')
+function toggleModalWindowOrder() {
+  orderWindow.classList.toggle('w-call-order--open');
 }
 
 /**
@@ -106,7 +106,48 @@ function toggleModalWindowOrder () {
 function closeModalWindowOrder() {
   closeOrderWindow.addEventListener('click', () => {
     toggleModalWindowOrder();
-  })
+  });
 }
 
 closeModalWindowOrder();
+
+/**
+ * Робота з формою та вікном успішного надсиллання даних.
+ */
+const formCall = document.querySelectorAll('.form-call');
+const messageSucceed = document.querySelector('.call-accepted');
+
+/**
+ * Функція виводить в консоль дані з форми.
+ */
+function consoleOutputDataForm() {
+  formCall.forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const dataForm = new FormData(form);
+
+      const nameUser = dataForm.get('name');
+      const phoneUser = dataForm.get('phone');
+      const emailUser = dataForm.get('email');
+
+      const userData = { nameUser, phoneUser, emailUser };
+
+      console.log(userData);
+
+      showSucceedMessage();
+    });
+  });
+}
+
+consoleOutputDataForm();
+
+/**
+ * Функція виводить повідомлення про успішне надсилання форми.
+ */
+function showSucceedMessage() {
+  messageSucceed.classList.add('call-accepted--show');
+  setTimeout(() => {
+    messageSucceed.classList.remove('call-accepted--show');
+  }, 2500);
+}
