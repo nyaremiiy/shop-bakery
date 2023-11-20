@@ -101,7 +101,7 @@ function toggleModalWindowOrder() {
 }
 
 /**
- * Функція закриває модальне вікнот замовлення.
+ * Функція закриває модальне вікно замовлення.
  */
 function closeModalWindowOrder() {
   closeOrderWindow.addEventListener('click', () => {

@@ -52,6 +52,7 @@
   --color-message-succeed: #318a37;
   --color-white: #fff;
   --color-brown: #a18268;
+  --color-gray: #cfcfbc;
   --f-name-logo: Gill Sans;
   --screen-smin-phone: 320px;
   --screen-smax-phone: 480px;
@@ -70,13 +71,12 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  /* background-color: var(--c-base-light); */
+  background-color: var(--c-base-light);
   font-family: 'Poppins', sans-serif;
   color: var(--color-primary-dark);
   line-height: normal;
   font-size: 18px;
   margin: 0;
-  background-color: #31261a;
 }
 ul {
   list-style: none;
@@ -393,6 +393,49 @@ input {
 }
 /* #endregion */
 
+/* #region Advantages Section */
+.s-advantages {
+  background-color: var(--c-green-dark);
+  padding: 16px 0;
+  @media screen and (max-width: 480px) {
+    background-color: var(--c-base-light);
+  }
+}
+.s-advantages__wrapper {
+  @media screen and (max-width: 480px) {
+    background-color: var(--color-gray);
+    border-radius: 24px;
+    padding: 24px 40px;
+  }
+}
+.s-advantages__list {
+  justify-content: space-between;
+  color: var(--c-base-light);
+  font-weight: 300;
+  font-size: 20px;
+  display: flex;
+  gap: 20px;
+
+  @media screen and (max-width: 1279px) {
+    justify-content: space-around;
+    font-size: 16px;
+  }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    font-size: 12px;
+    gap: 12px;
+  }
+  @media screen and (max-width: 480px) {
+    color: var(--color-primary-dark);
+    flex-direction: column;
+    font-weight: 300;
+    text-align: left;
+    font-size: 14px;
+    gap: 16px;
+  }
+}
+/* #endregion */
+
 /* #region Tradition Section */
 .tradition-section {
   padding-top: 96px;
@@ -485,28 +528,6 @@ input {
 /* #region Contact Section */
 .contact-title {
   margin-bottom: 16px;
-}
-/* #endregion */
-
-/* #region Asvantages Section */
-.advantages-section {
-  background-color: var(--c-green-dark);
-  padding: 16px 0;
-}
-.advantages-list {
-  color: var(--c-base-light);
-  justify-content: center;
-  font-weight: 300;
-  font-size: 20px;
-  display: flex;
-  gap: 40px;
-}
-.advantages-text .accent {
-  color: var(--c-green-dark);
-  font-weight: 600;
-}
-.advantages-text .uppercase {
-  text-transform: uppercase;
 }
 /* #endregion */
 
