@@ -4,15 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сучасна пекарня</title>
+    <!-- Swiper css CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Slider lokal -->
+    <link rel="stylesheet" href="./css/slider.css" />
     <!-- Normalize -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <!-- Connected styles -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Swiper js CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
     <!-- Connected JavaScript -->
     <script src="./js/index.js" defer></script>
   </head>
   <body>
     <!-- #region Svg sprite -->
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <symbol id="icon-arrow" viewBox="0 0 32 32">
+          <path
+            d="M0.528 17.274c-0.704-0.704-0.704-1.844 0-2.548l11.465-11.465c0.704-0.704 1.844-0.704 2.548 0s0.704 1.844 0 2.548l-10.191 10.192 10.191 10.192c0.704 0.704 0.704 1.844 0 2.548s-1.844 0.704-2.548 0l-11.465-11.465zM32 17.802h-30.198v-3.603h30.198v3.603z"
+          ></path>
+        </symbol>
+      </defs>
+    </svg>
 
     <!-- #endregion -->
     <!-- #region Header -->
@@ -185,50 +212,98 @@
         </div>
       </section>
       <!-- #endregion -->
-      <!--<section class="section" id="formats-sections">
-        <div class="container">
-          <h2 class="formats-title section-title centered">Формати</h2>
-          <ul class="formats-list">
-            <li class="formats-item">
-              <article class="format-card">
-                <h3 class="format-title" lang="en">Walrus</h3>
-                <div class="format-text">
-                  <p>Площа: до 120 м2</p>
-                  <p>Меню: розширене меню</p>
-                  <p>
-                    Штат: 2 продавці-касири, 2 пекарі, 2 помічники пекаря, 2
-                    офіціанти-різнороби
-                  </p>
-                  <p>Посадкові місця: є</p>
+      <!-- #region Section Formats -->
+      <section class="s-formats" id="s-formats">
+        <div class="container s-formats__container">
+          <h2 class="s-formats__title s-title">Формати</h2>
+          <div class="s-formats__slider slider">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="card card--warlus">
+                    <div class="card__content">
+                      <h3 class="card__title">Walrus</h3>
+                      <p class="card__text">Площа: до 120 м2</p>
+                      <p class="card__text">Меню: розширене меню</p>
+                      <p class="card__text">
+                        Штат: 2 продавці-касири, 2 пекарі, 2 помічники пекаря, 2
+                        офіціанти-різнороби
+                      </p>
+                      <p class="card__text">Посадкові місця: є</p>
+                    </div>
+                  </div>
                 </div>
-              </article>
-            </li>
-            <li class="formats-item">
-              <article class="format-card">
-                <h3 class="format-title" lang="en">Horseshoe</h3>
-                <div class="format-text">
-                  <p>Площа: до 25 м2</p>
-                  <p>Меню: найпопулярніші позиції меню</p>
-                  <p>Штат: 2 продавці-касири, 2 пекарі, 1 помічник пекаря</p>
-                  <p>Посадкові місця: відсутні</p>
+                <div class="swiper-slide">
+                  <div class="card card--horseshoe">
+                    <div class="card__content">
+                      <h3 class="card__title">Horseshoe</h3>
+                      <p class="card__text">Площа: до 25 м2</p>
+                      <p class="card__text">
+                        Меню: найпопулярніші позиції меню
+                      </p>
+                      <p class="card__text">
+                        Штат: 2 продавці-касири, 2 пекарі, 1 помічник пекаря
+                      </p>
+                      <p class="card__text">Посадкові місця: відсутні</p>
+                    </div>
+                  </div>
                 </div>
-              </article>
-            </li>
-            <li class="formats-item">
-              <article class="format-card">
-                <h3 class="format-title" lang="en">Handlebar</h3>
-                <div class="format-text">
-                  <p>Площа: до 15 м2</p>
-                  <p>Меню: найпопулярніші позиції меню</p>
-                  <p>Штат: 1 продавець, 1 пекар, 1 помічник пекаря</p>
-                  <p>Посадкові місця: відсутні</p>
+                <div class="swiper-slide">
+                  <div class="card card--handlebar">
+                    <div class="card__content">
+                      <h3 class="card__title">Handlebar</h3>
+                      <p class="card__text">Площа: до 15 м2</p>
+                      <p class="card__text">
+                        Меню: найпопулярніші позиції меню
+                      </p>
+                      <p class="card__text">
+                        Штат: 1 продавець, 1 пекар, 1 помічник пекаря
+                      </p>
+                      <p class="card__text">Посадкові місця: відсутні</p>
+                    </div>
+                  </div>
                 </div>
-              </article>
-            </li>
-          </ul>
+                <div class="swiper-slide">
+                  <div class="card card--horseshoe">
+                    <div class="card__content">
+                      <h3 class="card__title">Horseshoe</h3>
+                      <p class="card__text">Площа: до 25 м2</p>
+                      <p class="card__text">
+                        Меню: найпопулярніші позиції меню
+                      </p>
+                      <p class="card__text">
+                        Штат: 2 продавці-касири, 2 пекарі, 1 помічник пекаря
+                      </p>
+                      <p class="card__text">Посадкові місця: відсутні</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider__buttons">
+              <div class="swiper__button-prev swiper__btn">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+              </div>
+              <div class="swiper__button-next swiper__btn">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="slider__pag">
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="section" id="contact-sections">
+      <!-- #endregion -->
+      <!--<section class="section" id="contact-sections">
         <div class="container">
           <h2 class="contact-title section-title">
             Приєднуйся до мережі пекарень

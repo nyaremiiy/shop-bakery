@@ -484,9 +484,6 @@ input {
     max-width: 768px;
   }
 }
-.s-tradition__title {
-  font-size: 52px;
-}
 .s-tradition__desc {
   padding-top: 42px;
 
@@ -514,6 +511,9 @@ input {
 /* #region Chefs Section */
 .s-chefs {
   padding: 48px 0;
+  @media screen and (max-width: 480px) {
+    padding: 20px 0px;
+  }
 }
 .s-chefs__title {
   text-align: center;
@@ -592,35 +592,29 @@ input {
 /* #endregion */
 
 /* #region Formats Sections */
-.format-card {
-  background-image: linear-gradient(
-    180deg,
-    rgba(49, 38, 26, 0) 55.21%,
-    rgba(49, 38, 26, 0.71) 72.92%,
-    #31261a 100%
-  );
-  border: 1px solid lightgray;
-  border-radius: 16px;
-  height: 444px;
-  padding: 24px;
+.s-formats {
+  padding: 48px 0;
+  @media screen and (max-width: 480px) {
+    padding: 20px 0px;
+  }
 }
-.formats-title {
-  margin-bottom: 80px;
+.s-formats__title {
+  text-align: center;
 }
-.formats-list {
-  display: flex;
-  gap: 20px;
-}
-.formats-item {
-  flex-basis: calc((100% - 40px) / 3);
-}
-.format-title {
-  font-weight: 600;
-  font-size: 24px;
-}
-.format-text {
-  font-weight: 300;
-  font-size: 14px;
+.s-formats__slider {
+  padding-bottom: 49px;
+  margin-top: 80px;
+  @media screen and (max-width: 1279px) {
+    margin-top: 68px;
+  }
+  @media screen and (max-width: 768px) {
+    padding-bottom: 38px;
+    margin-top: 40px;
+  }
+  @media screen and (max-width: 480px) {
+    padding-bottom: 30px;
+    margin-top: 24px;
+  }
 }
 /* #endregion */
 
@@ -939,4 +933,95 @@ input {
   }
 }
 
+/* #endregion */
+
+/* #region Card */
+.card {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: var(--c-base-light);
+  justify-content: flex-end;
+  flex-direction: column;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  padding: 24px;
+  height: 445px;
+  @media screen and (max-width: 1279px) {
+    height: 360px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 380px;
+  }
+  @media screen and (max-width: 480px) {
+    height: 340px;
+  }
+}
+.card--warlus {
+  background-image: linear-gradient(
+      180deg,
+      rgba(49, 38, 26, 0) 55.21%,
+      rgba(49, 38, 26, 0.71) 72.92%,
+      #31261a 100%
+    ),
+    url('./../images/walrus-card.png');
+}
+.card--horseshoe {
+  background-image: linear-gradient(
+      180deg,
+      rgba(49, 38, 26, 0) 55.21%,
+      rgba(49, 38, 26, 0.71) 72.92%,
+      #31261a 100%
+    ),
+    url(./../images/horseshoe-card.png);
+}
+.card--handlebar {
+  background-image: linear-gradient(
+      180deg,
+      rgba(49, 38, 26, 0) 55.21%,
+      rgba(49, 38, 26, 0.71) 72.92%,
+      #31261a 100%
+    ),
+    url(./../images/handlebar-card.png);
+}
+.card:hover {
+  cursor: grab;
+}
+.card:active {
+  cursor: grabbing;
+}
+.card__content {
+  justify-content: flex-start;
+  flex-direction: column;
+  height: fit-content;
+  min-height: 158px;
+  display: flex;
+  @media screen and (max-width: 1279px) {
+    min-height: 144px;
+  }
+  @media screen and (max-width: 768px) {
+    min-height: 124px;
+  }
+  @media screen and (max-width: 480px) {
+    min-height: 108px;
+  }
+}
+.card__title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 24px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 12px;
+  }
+}
+.card__text {
+  font-weight: 300;
+  font-size: 14px;
+  @media screen and (max-width: 1279px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 10px;
+  }
+}
 /* #endregion */
