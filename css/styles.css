@@ -1054,6 +1054,14 @@ input {
     flex-basis: 50%;
   }
 }
+.s-contact__map {
+  @media screen and (max-width: 768px) {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    left: -24px;
+  }
+}
 .s-contact__title {
   font-size: 62px;
 
@@ -1145,11 +1153,9 @@ input {
   width: -webkit-fill-available;
   border-radius: 12px;
   @media screen and (max-width: 768px) {
-    position: relative;
-    max-width: 100vw;
+    border-radius: 0px;
     height: 280px;
     width: 100%;
-    left: -24px;
   }
   @media screen and (max-width: 480px) {
     height: 180px;
