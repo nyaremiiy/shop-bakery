@@ -1,0 +1,11 @@
+export const MENU = document.getElementById('js-menu');
+export const BURGER = document.getElementById('js-burger');
+export const CLOSE_MENU_ICON = document.getElementById('js-close-menu');
+export const MENU_LINKS = document.querySelectorAll('.nav__link--menu');
+export const BLUR_SCREEN = document.getElementById('js-blur-screen');
+export const BTN_ORDER_CALL = document.querySelectorAll('.js-show-window');
+export const BTN_SHOW_SUCCEED = document.querySelectorAll('.js-show-window-succeed');
+export const ORDER_WINDOW = document.getElementById('js-order-window');
+export const CLOSE_ORDER_WINDOW = document.getElementById('js-close-order-window');
+export const FORM_CALL = document.querySelectorAll('.form-call');
+export const MESSAGE_SUCCEED = document.querySelector('.call-accepted');
