@@ -1,673 +1,568 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Сучасна пекарня</title>
-    <!-- Webpage icon -->
-    <link rel="icon" href="./images/logo.ico" />
-    <!-- Swiper css CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop Bakery — сучасна пекарня</title>
+    <meta
+      name="description"
+      content="Shop Bakery — мережа сучасних пекарень з традиційним смаком. Три формати під будь-який бюджет, досвідчені шефи та замовлення за 5 хвилин."
     />
-    <!-- Slider lokal -->
-    <link rel="stylesheet" href="./css/slider.css" />
-    <!-- Normalize -->
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <!-- Connected styles -->
+    <meta name="theme-color" content="#f7f2e8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shop Bakery — сучасна пекарня" />
+    <meta
+      property="og:description"
+      content="Традиційна випічка, натуральні інгредієнти та формати під будь-який бюджет."
+    />
+    <meta property="og:image" content="./images/hero-1440.webp" />
+    <link rel="icon" href="./images/logo.ico" />
+
+    <!-- Critical resources: hero image + main Cyrillic fonts -->
+    <link
+      rel="preload"
+      as="image"
+      href="./images/hero-1440.webp"
+      imagesrcset="./images/hero-800.webp 800w, ./images/hero-1440.webp 1440w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="./fonts/manrope-cyrillic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/playfair-cyrillic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <link rel="stylesheet" href="./css/styles.css" />
-    <!-- Swiper js CDN -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-      defer
-    ></script>
-    <!-- Connected JavaScript -->
-    <script src="./js/index.js" type="module" defer></script>
-    <!-- Local settings Swiper -->
-    <script src="./js/slider.js" defer></script>
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <script src="./js/main.js" type="module"></script>
   </head>
   <body>
-    <!-- #region Svg sprite -->
-    <svg
-      aria-hidden="true"
-      style="position: absolute; width: 0; height: 0; overflow: hidden"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
+    <!-- SVG sprite -->
+    <svg aria-hidden="true" width="0" height="0" style="position: absolute">
       <defs>
-        <symbol id="icon-arrow" viewBox="0 0 32 32">
+        <symbol id="i-logo" viewBox="0 0 108 46"><path d="M5.85938 10.6328L4.07812 9.55469C2.96094 8.875 2.16406 8.20703 1.6875 7.55078C1.21875 6.88672 0.984375 6.125 0.984375 5.26562C0.984375 3.97656 1.42969 2.92969 2.32031 2.125C3.21875 1.32031 4.38281 0.917969 5.8125 0.917969C7.17969 0.917969 8.43359 1.30078 9.57422 2.06641V4.72656C8.39453 3.59375 7.125 3.02734 5.76562 3.02734C5 3.02734 4.37109 3.20703 3.87891 3.56641C3.38672 3.91797 3.14062 4.37109 3.14062 4.92578C3.14062 5.41797 3.32031 5.87891 3.67969 6.30859C4.03906 6.73828 4.62109 7.1875 5.42578 7.65625L7.21875 8.71094C9.21875 9.89844 10.2188 11.4141 10.2188 13.2578C10.2188 14.5703 9.77734 15.6367 8.89453 16.457C8.01953 17.2773 6.87891 17.6875 5.47266 17.6875C3.85547 17.6875 2.38281 17.1914 1.05469 16.1992V13.2227C2.32031 14.8242 3.78516 15.625 5.44922 15.625C6.18359 15.625 6.79297 15.4219 7.27734 15.0156C7.76953 14.6016 8.01562 14.0859 8.01562 13.4688C8.01562 12.4688 7.29688 11.5234 5.85938 10.6328ZM24.3398 1.12891H26.6836V17.5H24.3398V10.375H15.1406V17.5H12.7969V1.12891H15.1406V8.20703H24.3398V1.12891ZM38.3438 0.894531C40.875 0.894531 42.9805 1.69531 44.6602 3.29688C46.3477 4.89844 47.1914 6.90625 47.1914 9.32031C47.1914 11.7344 46.3398 13.7344 44.6367 15.3203C42.9414 16.8984 40.8008 17.6875 38.2148 17.6875C35.7461 17.6875 33.6875 16.8984 32.0391 15.3203C30.3984 13.7344 29.5781 11.75 29.5781 9.36719C29.5781 6.92188 30.4062 4.89844 32.0625 3.29688C33.7188 1.69531 35.8125 0.894531 38.3438 0.894531ZM38.4375 3.12109C36.5625 3.12109 35.0195 3.70703 33.8086 4.87891C32.6055 6.05078 32.0039 7.54688 32.0039 9.36719C32.0039 11.1328 32.6094 12.6016 33.8203 13.7734C35.0312 14.9453 36.5469 15.5312 38.3672 15.5312C40.1953 15.5312 41.7188 14.9336 42.9375 13.7383C44.1641 12.543 44.7773 11.0547 44.7773 9.27344C44.7773 7.53906 44.1641 6.08203 42.9375 4.90234C41.7188 3.71484 40.2188 3.12109 38.4375 3.12109ZM49.9336 17.5V1.10547H55.125C56.6875 1.10547 57.9336 1.52734 58.8633 2.37109C59.793 3.21484 60.2578 4.34766 60.2578 5.76953C60.2578 6.72266 60.0195 7.56641 59.543 8.30078C59.0664 9.03516 58.4141 9.57031 57.5859 9.90625C56.7578 10.2344 55.5703 10.3984 54.0234 10.3984H52.2891V17.5H49.9336ZM54.7148 3.19141H52.2891V8.3125H54.8555C55.8086 8.3125 56.543 8.08984 57.0586 7.64453C57.5742 7.19141 57.832 6.54688 57.832 5.71094C57.832 4.03125 56.793 3.19141 54.7148 3.19141ZM16.875 40.8945C16.875 42.293 16.3945 43.4102 15.4336 44.2461C14.4805 45.082 13.1445 45.5 11.4258 45.5H2.03906V29.2578H9.89062C10.9062 29.2578 11.7891 29.3555 12.5391 29.5508C13.2969 29.7461 13.9062 30.0156 14.3672 30.3594C14.8281 30.6953 15.1719 31.0938 15.3984 31.5547C15.625 32.0156 15.7383 32.5195 15.7383 33.0664C15.7383 33.6602 15.6211 34.2109 15.3867 34.7188C15.1523 35.2188 14.8594 35.6328 14.5078 35.9609C14.1641 36.2812 13.8164 36.5078 13.4648 36.6406C14.5742 37.0781 15.418 37.6328 15.9961 38.3047C16.582 38.9688 16.875 39.832 16.875 40.8945ZM11.1562 33.9336C11.1562 33.1523 10.8984 32.6328 10.3828 32.375C9.86719 32.1172 9.0625 31.9883 7.96875 31.9883H6.9375V35.8789H7.99219C9.10938 35.8789 9.91406 35.75 10.4062 35.4922C10.9062 35.2344 11.1562 34.7148 11.1562 33.9336ZM11.9531 40.6953C11.9531 39.3047 10.9453 38.6094 8.92969 38.6094H6.9375V42.7695H8.92969C10.9453 42.7695 11.9531 42.0781 11.9531 40.6953ZM37.1484 45.5H32.1328L30.8086 42.207H23.7539L22.4062 45.5H17.3906L24.5742 29.2578H29.9883L37.1484 45.5ZM29.6836 39.3828L27.3047 33.4531L24.9023 39.3828H29.6836ZM56.3906 45.5H50.4141L44.2031 37.8945V45.5H39.3047V29.2578H44.2031V36.5234L50.0859 29.2578H55.4062L49.3594 36.8633L56.3906 45.5ZM70.7695 45.5H58.5234V29.2578H70.5703V32.5156H63.4219V35.4922H70.2422V38.7617H63.4219V42.2305H70.7695V45.5ZM89.7891 45.5H84.5273L83.25 42.6172C82.7812 41.5625 82.3594 40.793 81.9844 40.3086C81.6094 39.8164 81.2422 39.5039 80.8828 39.3711C80.5312 39.2305 80.0742 39.1602 79.5117 39.1602H78.9609V45.5H74.0625V29.2578H82.3945C83.7383 29.2578 84.8398 29.5312 85.6992 30.0781C86.5586 30.625 87.1758 31.2891 87.5508 32.0703C87.9336 32.8516 88.125 33.5938 88.125 34.2969C88.125 35.1172 87.9648 35.8125 87.6445 36.3828C87.332 36.9453 87 37.3555 86.6484 37.6133C86.2969 37.8711 85.9023 38.1172 85.4648 38.3516C85.9883 38.6562 86.418 39.0195 86.7539 39.4414C87.0977 39.8555 87.5625 40.6992 88.1484 41.9727L89.7891 45.5ZM83.1328 34.3906C83.1328 33.6406 82.8867 33.1172 82.3945 32.8203C81.9023 32.5234 81.1016 32.375 79.9922 32.375H78.9609V36.2891H80.0156C81.2109 36.2891 82.0273 36.1602 82.4648 35.9023C82.9102 35.6367 83.1328 35.1328 83.1328 34.3906ZM107.156 29.2578L100.793 38.0586V45.5H95.8945V38.1523L89.4141 29.2578H94.5L98.2266 34.3672L101.965 29.2578H107.156Z"/></symbol>
+<symbol id="i-facebook" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M0 16C0 7.16347 7.16347 0 16 0C24.8365 0 32 7.16347 32 16C32 24.8365 24.8365 32 16 32C7.16347 32 0 24.8365 0 16ZM17.6677 25.4077V16.7028H20.0706L20.3891 13.7031H17.6677L17.6718 12.2017C17.6718 11.4193 17.7461 11.0001 18.8699 11.0001H20.3721V8H17.9688C15.0821 8 14.0661 9.4552 14.0661 11.9024V13.7034H12.2667V16.7031H14.0661V25.4077H17.6677Z"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M0 16C0 7.16347 7.16347 0 16 0C24.8365 0 32 7.16347 32 16C32 24.8365 24.8365 32 16 32C7.16347 32 0 24.8365 0 16ZM16.0008 7.46667C13.6833 7.46667 13.3924 7.4768 12.4822 7.5182C11.5737 7.5598 10.9537 7.70367 10.4111 7.91467C9.8498 8.1326 9.37373 8.4242 8.8994 8.89867C8.42473 9.373 8.13313 9.84907 7.91447 10.4101C7.70293 10.9529 7.55893 11.5732 7.51807 12.4813C7.47733 13.3915 7.46667 13.6825 7.46667 16.0001C7.46667 18.3176 7.477 18.6076 7.5182 19.5178C7.56 20.4263 7.7038 21.0463 7.91467 21.5889C8.1328 22.1502 8.42433 22.6263 8.89887 23.1006C9.373 23.5753 9.84907 23.8675 10.41 24.0855C10.9529 24.2965 11.5732 24.4403 12.4815 24.4819C13.3917 24.5234 13.6824 24.5335 15.9997 24.5335C18.3175 24.5335 18.6074 24.5234 19.5177 24.4819C20.4261 24.4403 21.0469 24.2965 21.5899 24.0855C22.1509 23.8675 22.6263 23.5753 23.1004 23.1006C23.5751 22.6263 23.8667 22.1502 24.0853 21.5891C24.2951 21.0463 24.4391 20.4261 24.4818 19.518C24.5227 18.6077 24.5333 18.3176 24.5333 16.0001C24.5333 13.6825 24.5227 13.3917 24.4818 12.4815C24.4391 11.573 24.2951 10.9529 24.0853 10.4103C23.8667 9.84907 23.5751 9.373 23.1004 8.89867C22.6257 8.424 22.1511 8.13247 21.5893 7.91467C21.0453 7.70367 20.4249 7.5598 19.5164 7.5182C18.6061 7.4768 18.3164 7.46667 15.9981 7.46667H16.0008Z"/><path fill-rule="evenodd" d="M15.2349 9.00506C15.4621 9.00473 15.7157 9.00506 16.0005 9.00506C18.2789 9.00506 18.5489 9.01326 19.4487 9.05413C20.2807 9.0922 20.7323 9.2312 21.0331 9.348C21.4313 9.50266 21.7152 9.68753 22.0137 9.9862C22.3123 10.2849 22.4973 10.5693 22.6523 10.9676C22.7691 11.268 22.9083 11.7196 22.9461 12.5516C22.987 13.4511 22.9959 13.7214 22.9959 15.9987C22.9959 18.2761 22.987 18.5463 22.9461 19.4459C22.9081 20.2779 22.7691 20.7295 22.6523 21.0299C22.4976 21.4281 22.3123 21.7117 22.0137 22.0102C21.715 22.3089 21.4315 22.4937 21.0331 22.6484C20.7326 22.7657 20.2807 22.9044 19.4487 22.9425C18.5491 22.9833 18.2789 22.9922 16.0005 22.9922C13.7219 22.9922 13.4518 22.9833 12.5523 22.9425C11.7203 22.9041 11.2687 22.765 10.9677 22.6482C10.5695 22.4935 10.285 22.3087 9.98635 22.01C9.68768 21.7113 9.50282 21.4276 9.34782 21.0292C9.23102 20.7287 9.09182 20.2772 9.05395 19.4452C9.01302 18.5456 9.00488 18.2754 9.00488 15.9966C9.00488 13.7178 9.01302 13.449 9.05395 12.5495C9.09195 11.7175 9.23102 11.2659 9.34782 10.9651C9.50248 10.5669 9.68768 10.2824 9.98635 9.98373C10.285 9.68506 10.5695 9.5002 10.9677 9.34513C11.2685 9.2278 11.7203 9.08913 12.5523 9.05093C13.3395 9.0154 13.6445 9.00473 15.2349 9.00293V9.00506ZM20.5555 10.4219C19.9902 10.4219 19.5315 10.8801 19.5315 11.4456C19.5315 12.0109 19.9902 12.4696 20.5555 12.4696C21.1209 12.4696 21.5795 12.0109 21.5795 11.4456C21.5795 10.8803 21.1209 10.4219 20.5555 10.4219ZM16.0005 11.6184C13.5803 11.6184 11.6182 13.5806 11.6182 16.0007C11.6182 18.4208 13.5803 20.3821 16.0005 20.3821C18.4206 20.3821 20.382 18.4208 20.382 16.0007C20.382 13.5806 18.4206 11.6184 16.0005 11.6184Z"/><path fill-rule="evenodd" d="M16.0007 13.1553C17.5716 13.1553 18.8452 14.4287 18.8452 15.9997C18.8452 17.5706 17.5716 18.8442 16.0007 18.8442C14.4296 18.8442 13.1562 17.5706 13.1562 15.9997C13.1562 14.4287 14.4296 13.1553 16.0007 13.1553Z"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
           <path
-            d="M0.528 17.274c-0.704-0.704-0.704-1.844 0-2.548l11.465-11.465c0.704-0.704 1.844-0.704 2.548 0s0.704 1.844 0 2.548l-10.191 10.192 10.191 10.192c0.704 0.704 0.704 1.844 0 2.548s-1.844 0.704-2.548 0l-11.465-11.465zM32 17.802h-30.198v-3.603h30.198v3.603z"
-          ></path>
+            d="M5 12h14M13 6l6 6-6 6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-close" viewBox="0 0 24 24">
+          <path
+            d="M6 6l12 12M18 6 6 18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-burger" viewBox="0 0 24 24">
+          <path
+            d="M3 7h18M3 12h18M10 17h11"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path
+            d="m5 12.5 4.5 4.5L19 7.5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+          <path
+            d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          />
+          <circle
+            cx="12"
+            cy="9.5"
+            r="2.5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          />
         </symbol>
       </defs>
     </svg>
-    <!-- #endregion -->
 
-    <!-- #region Header -->
-    <header class="header">
-      <div class="container header__container">
-        <a href="#" class="header__logo">
-          <div class="logo">
-            <svg
-              class="logo__svg"
-              viewBox="0 0 108 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.85938 10.6328L4.07812 9.55469C2.96094 8.875 2.16406 8.20703 1.6875 7.55078C1.21875 6.88672 0.984375 6.125 0.984375 5.26562C0.984375 3.97656 1.42969 2.92969 2.32031 2.125C3.21875 1.32031 4.38281 0.917969 5.8125 0.917969C7.17969 0.917969 8.43359 1.30078 9.57422 2.06641V4.72656C8.39453 3.59375 7.125 3.02734 5.76562 3.02734C5 3.02734 4.37109 3.20703 3.87891 3.56641C3.38672 3.91797 3.14062 4.37109 3.14062 4.92578C3.14062 5.41797 3.32031 5.87891 3.67969 6.30859C4.03906 6.73828 4.62109 7.1875 5.42578 7.65625L7.21875 8.71094C9.21875 9.89844 10.2188 11.4141 10.2188 13.2578C10.2188 14.5703 9.77734 15.6367 8.89453 16.457C8.01953 17.2773 6.87891 17.6875 5.47266 17.6875C3.85547 17.6875 2.38281 17.1914 1.05469 16.1992V13.2227C2.32031 14.8242 3.78516 15.625 5.44922 15.625C6.18359 15.625 6.79297 15.4219 7.27734 15.0156C7.76953 14.6016 8.01562 14.0859 8.01562 13.4688C8.01562 12.4688 7.29688 11.5234 5.85938 10.6328ZM24.3398 1.12891H26.6836V17.5H24.3398V10.375H15.1406V17.5H12.7969V1.12891H15.1406V8.20703H24.3398V1.12891ZM38.3438 0.894531C40.875 0.894531 42.9805 1.69531 44.6602 3.29688C46.3477 4.89844 47.1914 6.90625 47.1914 9.32031C47.1914 11.7344 46.3398 13.7344 44.6367 15.3203C42.9414 16.8984 40.8008 17.6875 38.2148 17.6875C35.7461 17.6875 33.6875 16.8984 32.0391 15.3203C30.3984 13.7344 29.5781 11.75 29.5781 9.36719C29.5781 6.92188 30.4062 4.89844 32.0625 3.29688C33.7188 1.69531 35.8125 0.894531 38.3438 0.894531ZM38.4375 3.12109C36.5625 3.12109 35.0195 3.70703 33.8086 4.87891C32.6055 6.05078 32.0039 7.54688 32.0039 9.36719C32.0039 11.1328 32.6094 12.6016 33.8203 13.7734C35.0312 14.9453 36.5469 15.5312 38.3672 15.5312C40.1953 15.5312 41.7188 14.9336 42.9375 13.7383C44.1641 12.543 44.7773 11.0547 44.7773 9.27344C44.7773 7.53906 44.1641 6.08203 42.9375 4.90234C41.7188 3.71484 40.2188 3.12109 38.4375 3.12109ZM49.9336 17.5V1.10547H55.125C56.6875 1.10547 57.9336 1.52734 58.8633 2.37109C59.793 3.21484 60.2578 4.34766 60.2578 5.76953C60.2578 6.72266 60.0195 7.56641 59.543 8.30078C59.0664 9.03516 58.4141 9.57031 57.5859 9.90625C56.7578 10.2344 55.5703 10.3984 54.0234 10.3984H52.2891V17.5H49.9336ZM54.7148 3.19141H52.2891V8.3125H54.8555C55.8086 8.3125 56.543 8.08984 57.0586 7.64453C57.5742 7.19141 57.832 6.54688 57.832 5.71094C57.832 4.03125 56.793 3.19141 54.7148 3.19141ZM16.875 40.8945C16.875 42.293 16.3945 43.4102 15.4336 44.2461C14.4805 45.082 13.1445 45.5 11.4258 45.5H2.03906V29.2578H9.89062C10.9062 29.2578 11.7891 29.3555 12.5391 29.5508C13.2969 29.7461 13.9062 30.0156 14.3672 30.3594C14.8281 30.6953 15.1719 31.0938 15.3984 31.5547C15.625 32.0156 15.7383 32.5195 15.7383 33.0664C15.7383 33.6602 15.6211 34.2109 15.3867 34.7188C15.1523 35.2188 14.8594 35.6328 14.5078 35.9609C14.1641 36.2812 13.8164 36.5078 13.4648 36.6406C14.5742 37.0781 15.418 37.6328 15.9961 38.3047C16.582 38.9688 16.875 39.832 16.875 40.8945ZM11.1562 33.9336C11.1562 33.1523 10.8984 32.6328 10.3828 32.375C9.86719 32.1172 9.0625 31.9883 7.96875 31.9883H6.9375V35.8789H7.99219C9.10938 35.8789 9.91406 35.75 10.4062 35.4922C10.9062 35.2344 11.1562 34.7148 11.1562 33.9336ZM11.9531 40.6953C11.9531 39.3047 10.9453 38.6094 8.92969 38.6094H6.9375V42.7695H8.92969C10.9453 42.7695 11.9531 42.0781 11.9531 40.6953ZM37.1484 45.5H32.1328L30.8086 42.207H23.7539L22.4062 45.5H17.3906L24.5742 29.2578H29.9883L37.1484 45.5ZM29.6836 39.3828L27.3047 33.4531L24.9023 39.3828H29.6836ZM56.3906 45.5H50.4141L44.2031 37.8945V45.5H39.3047V29.2578H44.2031V36.5234L50.0859 29.2578H55.4062L49.3594 36.8633L56.3906 45.5ZM70.7695 45.5H58.5234V29.2578H70.5703V32.5156H63.4219V35.4922H70.2422V38.7617H63.4219V42.2305H70.7695V45.5ZM89.7891 45.5H84.5273L83.25 42.6172C82.7812 41.5625 82.3594 40.793 81.9844 40.3086C81.6094 39.8164 81.2422 39.5039 80.8828 39.3711C80.5312 39.2305 80.0742 39.1602 79.5117 39.1602H78.9609V45.5H74.0625V29.2578H82.3945C83.7383 29.2578 84.8398 29.5312 85.6992 30.0781C86.5586 30.625 87.1758 31.2891 87.5508 32.0703C87.9336 32.8516 88.125 33.5938 88.125 34.2969C88.125 35.1172 87.9648 35.8125 87.6445 36.3828C87.332 36.9453 87 37.3555 86.6484 37.6133C86.2969 37.8711 85.9023 38.1172 85.4648 38.3516C85.9883 38.6562 86.418 39.0195 86.7539 39.4414C87.0977 39.8555 87.5625 40.6992 88.1484 41.9727L89.7891 45.5ZM83.1328 34.3906C83.1328 33.6406 82.8867 33.1172 82.3945 32.8203C81.9023 32.5234 81.1016 32.375 79.9922 32.375H78.9609V36.2891H80.0156C81.2109 36.2891 82.0273 36.1602 82.4648 35.9023C82.9102 35.6367 83.1328 35.1328 83.1328 34.3906ZM107.156 29.2578L100.793 38.0586V45.5H95.8945V38.1523L89.4141 29.2578H94.5L98.2266 34.3672L101.965 29.2578H107.156Z"
-                fill="#FAF4EA"
-              />
-            </svg>
-          </div>
+    <a class="skip-link" href="#main">Перейти до змісту</a>
+
+    <!-- Header -->
+    <header class="header" data-header>
+      <div class="container header__inner">
+        <a href="#top" class="logo" aria-label="Shop Bakery — на початок">
+          <svg class="logo__svg"><use href="#i-logo" /></svg>
         </a>
-        <nav class="nav">
+        <nav class="nav" aria-label="Основна навігація">
           <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#" class="nav__link">Наші традиції</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Шеф-кухарі</a>
-            </li>
-            <li class="nav__item"><a href="#" class="nav__link">Формати</a></li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Контакти</a>
-            </li>
+            <li><a href="#about" class="nav__link">Наші традиції</a></li>
+            <li><a href="#chefs" class="nav__link">Шеф-кухарі</a></li>
+            <li><a href="#formats" class="nav__link">Формати</a></li>
+            <li><a href="#contact" class="nav__link">Контакти</a></li>
           </ul>
         </nav>
-        <div class="header__order-call">
-          <button class="btn-order-call js-show-window" type="button">
-            <span>Замовити дзвінок</span>
-          </button>
-        </div>
-        <div class="header__burger">
-          <div class="burger" id="js-burger">
-            <svg
-              class="burger__svg"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M22 18.005C22 18.555 21.554 19 21.005 19H12.995C12.7311 19 12.478 18.8952 12.2914 18.7086C12.1048 18.522 12 18.2689 12 18.005C12 17.7411 12.1048 17.488 12.2914 17.3014C12.478 17.1148 12.7311 17.01 12.995 17.01H21.005C21.555 17.01 22 17.455 22 18.005ZM22 12C22 12.55 21.554 12.995 21.005 12.995H2.995C2.73111 12.995 2.47803 12.8902 2.29143 12.7036C2.10483 12.517 2 12.2639 2 12C2 11.7361 2.10483 11.483 2.29143 11.2964C2.47803 11.1098 2.73111 11.005 2.995 11.005H21.005C21.555 11.005 22 11.451 22 12ZM21.005 6.99C21.2689 6.99 21.522 6.88517 21.7086 6.69857C21.8952 6.51197 22 6.25889 22 5.995C22 5.73111 21.8952 5.47803 21.7086 5.29143C21.522 5.10483 21.2689 5 21.005 5H8.995C8.86433 5 8.73495 5.02574 8.61423 5.07574C8.49351 5.12574 8.38382 5.19903 8.29143 5.29143C8.19903 5.38382 8.12574 5.49351 8.07574 5.61423C8.02574 5.73495 8 5.86433 8 5.995C8 6.12567 8.02574 6.25505 8.07574 6.37577C8.12574 6.49649 8.19903 6.60618 8.29143 6.69857C8.38382 6.79097 8.49351 6.86426 8.61423 6.91426C8.73495 6.96426 8.86433 6.99 8.995 6.99H21.005Z"
-                fill="#FAF4EA"
-              />
-            </svg>
-          </div>
-        </div>
+        <button class="btn btn--primary header__cta" type="button" data-open="order">
+          Замовити дзвінок
+        </button>
+        <button
+          class="icon-btn header__burger"
+          type="button"
+          data-open="menu"
+          aria-label="Відкрити меню"
+        >
+          <svg class="icon"><use href="#i-burger" /></svg>
+        </button>
       </div>
     </header>
-    <!-- #endregion -->
-    <!-- #region Main -->
-    <main>
-      <!-- #region Section Hero -->
-      <section class="s-hero">
-        <div class="container s-hero__container">
-          <h1 class="s-hero__title">
-            <span class="accent">Сучасна</span> пекарня
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <img
+          class="hero__bg"
+          src="./images/hero-1440.webp"
+          srcset="./images/hero-800.webp 800w, ./images/hero-1440.webp 1440w"
+          sizes="100vw"
+          width="1440"
+          height="736"
+          alt=""
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="container hero__inner">
+          <p class="eyebrow eyebrow--light">Мережа пекарень · Київ</p>
+          <h1 class="hero__title">
+            Сучасна <em>пекарня</em>
           </h1>
-          <div class="s-hero__order-call">
-            <button class="btn-order-call js-show-window" type="button">
-              <span>Замовити дзвінок</span>
+          <p class="hero__lead">
+            Традиційний смак, натуральні інгредієнти та стильний простір.
+            Відкрий власну пекарню у форматі, що підходить саме тобі.
+          </p>
+          <div class="hero__actions">
+            <button class="btn btn--primary btn--lg" type="button" data-open="order">
+              Замовити дзвінок
             </button>
+            <a class="btn btn--ghost btn--lg" href="#formats">
+              Переглянути формати
+              <svg class="icon"><use href="#i-arrow" /></svg>
+            </a>
           </div>
         </div>
       </section>
-      <!-- #endregion -->
-      <!-- #region Section Advantages -->
-      <section class="s-advantages">
-        <div class="container s-advantages__container">
-          <div class="s-advantages__wrapper">
-            <ul class="s-advantages__list">
-              <li class="s-advantages__item">Великий попит на ринку</li>
-              <li class="s-advantages__item">Доступні за бюджетом формати</li>
-              <li class="s-advantages__item">
-                Досвідчена управлінська команда
-              </li>
-            </ul>
-          </div>
+
+      <!-- Advantages -->
+      <section class="perks" aria-label="Наші переваги">
+        <div class="container">
+          <ul class="perks__list">
+            <li class="perk" data-reveal>
+              <span class="perk__num">01</span>
+              <div>
+                <h2 class="perk__title">Великий попит на ринку</h2>
+                <p class="perk__text">Свіжа випічка — щоденна звичка клієнтів.</p>
+              </div>
+            </li>
+            <li class="perk" data-reveal>
+              <span class="perk__num">02</span>
+              <div>
+                <h2 class="perk__title">Доступні за бюджетом формати</h2>
+                <p class="perk__text">Від острівця на 15 м² до кафе на 120 м².</p>
+              </div>
+            </li>
+            <li class="perk" data-reveal>
+              <span class="perk__num">03</span>
+              <div>
+                <h2 class="perk__title">Досвідчена управлінська команда</h2>
+                <p class="perk__text">Супровід від запуску до перших продажів.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
-      <!-- #endregion -->
-      <!-- #region Section Tradition -->
-      <section class="s-tradition" id="s-tradition">
-        <div class="container s-tradition__container">
-          <div class="s-tradition__text">
-            <h2 class="s-tradition__title s-title">Новий формат традицій</h2>
-            <div class="s-tradition__info">
-              <p class="s-tradition__desc">
-                <span class="accent uppercase semi-bold">shop bakery</span> — це
-                пекарня, яка взяла все найкраще, і зберегла смак традиційної
-                випічки та натуральність інгредієнтів.
-              </p>
-              <p class="s-tradition__desc">
-                Ми працюємо як найвідоміші мережі—
-                <span class="accent semi-bold"
-                  >5 хвилин і замовлення готове</span
-                >. А ще у наших пекарень стильний дизайн та висока якість
-                обслуговування!
-              </p>
-            </div>
+
+      <!-- About / Tradition -->
+      <section class="section about" id="about">
+        <div class="container about__grid">
+          <div class="about__text" data-reveal>
+            <p class="eyebrow">Про нас</p>
+            <h2 class="title">Новий формат <em>традицій</em></h2>
+            <p class="about__desc">
+              <strong class="brand-word">Shop Bakery</strong> — це пекарня, яка
+              взяла все найкраще і зберегла смак традиційної випічки та
+              натуральність інгредієнтів.
+            </p>
+            <p class="about__desc">
+              Ми працюємо як найвідоміші мережі —
+              <strong>5 хвилин, і замовлення готове</strong>. А ще у наших
+              пекарень стильний дизайн та висока якість обслуговування.
+            </p>
+            <dl class="stats">
+              <div class="stats__item">
+                <dt>Час замовлення</dt>
+                <dd>5<small>хв</small></dd>
+              </div>
+              <div class="stats__item">
+                <dt>Натуральний склад</dt>
+                <dd>100<small>%</small></dd>
+              </div>
+              <div class="stats__item">
+                <dt>Формати пекарень</dt>
+                <dd>3</dd>
+              </div>
+            </dl>
           </div>
-          <div class="s-tradition__image">
+          <figure class="about__media" data-reveal>
             <img
-              src="./images/baker-man.jpg"
-              alt="Чоловік з посмішкою дивиться на хлібобулочні вироби."
+              src="./images/baker.webp"
+              width="393"
+              height="466"
+              alt="Усміхнений пекар біля стелажа зі свіжим хлібом"
+              loading="lazy"
+              decoding="async"
             />
-          </div>
+            <svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
+              <defs>
+                <path id="badge-circle" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0" />
+              </defs>
+              <text>
+                <textPath href="#badge-circle">
+                  свіжа випічка · щодня · з любов'ю ·
+                </textPath>
+              </text>
+            </svg>
+          </figure>
         </div>
       </section>
-      <!-- #endregion -->
-      <!-- #region Section Chefs -->
-      <section class="s-chefs" id="s-chef">
-        <div class="container s-chefs__container">
-          <h2 class="s-chefs__title s-title">
-            Наші найкращі <span class="accent">шеф -кухарі</span>
-          </h2>
-          <ul class="s-chefs__list">
-            <li class="s-chefs__item">
-              <article>
-                <div class="s-chefs__image">
-                  <img
-                    class="s-chefs__person"
-                    src="./images/photo-chef01.jpg"
-                    alt="Шеф Настя"
-                  />
-                </div>
-                <div class="s-chef">
-                  <h3 class="s-chef__title">Настя</h3>
-                  <p class="s-chef__desc">Привіт, я Настя!</p>
-                  <p class="s-chef__desc">
-                    Вже 10 років, я свтілюю у життя цікаві та смачні ідеї.
-                  </p>
-                  <p class="s-chef__desc">
-                    Я випічу для вас найсмачніщі вироби!
-                  </p>
+
+      <!-- Chefs -->
+      <section class="section chefs" id="chefs">
+        <div class="container">
+          <header class="section-head section-head--center" data-reveal>
+            <p class="eyebrow">Команда</p>
+            <h2 class="title">Наші найкращі <em>шеф-кухарі</em></h2>
+          </header>
+          <ul class="chefs__list">
+            <li data-reveal>
+              <article class="chef">
+                <img
+                  class="chef__photo"
+                  src="./images/chef-nastya.webp"
+                  width="241"
+                  height="390"
+                  alt="Шеф-пекарка Настя тримає тарілку з круасаном"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="chef__body">
+                  <p class="chef__role">Шеф-пекарка · 10 років досвіду</p>
+                  <h3 class="chef__name">Настя</h3>
+                  <blockquote class="chef__quote">
+                    <p>
+                      Вже 10 років я втілюю в життя цікаві та смачні ідеї. Я
+                      спечу для вас найсмачніші вироби!
+                    </p>
+                  </blockquote>
                 </div>
               </article>
             </li>
-            <li class="s-chefs__item">
-              <article>
-                <div class="s-chefs__image">
-                  <img
-                    class="s-chefs__person"
-                    src="./images/photo-chef02.jpg"
-                    alt="Шеф Влад"
-                  />
-                </div>
-                <div class="s-chef">
-                  <h3 class="s-chef__title">Влад</h3>
-                  <p class="s-chef__desc">Привіт, я Влад!</p>
-                  <p class="s-chef__desc">
-                    Мій кодитерський стаж вже 18 років.<br />SHOP BEKERY - це
-                    наша любов, з якою ми ділимось кожен раз з Вами через нашу
-                    випічку!
-                  </p>
-                  <p class="s-chef__desc">
-                    Я зроблю для вас унікальну начинку на будь який смак!
-                  </p>
+            <li data-reveal>
+              <article class="chef">
+                <img
+                  class="chef__photo"
+                  src="./images/chef-vlad.webp"
+                  width="241"
+                  height="390"
+                  alt="Шеф-кондитер Влад"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="chef__body">
+                  <p class="chef__role">Шеф-кондитер · 18 років досвіду</p>
+                  <h3 class="chef__name">Влад</h3>
+                  <blockquote class="chef__quote">
+                    <p>
+                      Shop Bakery — це наша любов, якою ми щоразу ділимося з
+                      вами через випічку. Я зроблю унікальну начинку на будь-який
+                      смак!
+                    </p>
+                  </blockquote>
                 </div>
               </article>
             </li>
           </ul>
         </div>
       </section>
-      <!-- #endregion -->
-      <!-- #region Section Formats -->
-      <section class="s-formats" id="s-formats">
-        <div class="container s-formats__container">
-          <h2 class="s-formats__title s-title">Формати</h2>
-          <div class="s-formats__slider slider">
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="card card--warlus">
-                    <div class="card__content">
-                      <h3 class="card__title">Walrus</h3>
-                      <p class="card__text">Площа: до 120 м2</p>
-                      <p class="card__text">Меню: розширене меню</p>
-                      <p class="card__text">
-                        Штат: 2 продавці-касири, 2 пекарі, 2 помічники пекаря, 2
-                        офіціанти-різнороби
-                      </p>
-                      <p class="card__text">Посадкові місця: є</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card card--horseshoe">
-                    <div class="card__content">
-                      <h3 class="card__title">Horseshoe</h3>
-                      <p class="card__text">Площа: до 25 м2</p>
-                      <p class="card__text">
-                        Меню: найпопулярніші позиції меню
-                      </p>
-                      <p class="card__text">
-                        Штат: 2 продавці-касири, 2 пекарі, 1 помічник пекаря
-                      </p>
-                      <p class="card__text">Посадкові місця: відсутні</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card card--handlebar">
-                    <div class="card__content">
-                      <h3 class="card__title">Handlebar</h3>
-                      <p class="card__text">Площа: до 15 м2</p>
-                      <p class="card__text">
-                        Меню: найпопулярніші позиції меню
-                      </p>
-                      <p class="card__text">
-                        Штат: 1 продавець, 1 пекар, 1 помічник пекаря
-                      </p>
-                      <p class="card__text">Посадкові місця: відсутні</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card card--horseshoe">
-                    <div class="card__content">
-                      <h3 class="card__title">Horseshoe</h3>
-                      <p class="card__text">Площа: до 25 м2</p>
-                      <p class="card__text">
-                        Меню: найпопулярніші позиції меню
-                      </p>
-                      <p class="card__text">
-                        Штат: 2 продавці-касири, 2 пекарі, 1 помічник пекаря
-                      </p>
-                      <p class="card__text">Посадкові місця: відсутні</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+      <!-- Formats -->
+      <section class="section formats" id="formats">
+        <div class="container">
+          <header class="section-head formats__head" data-reveal>
+            <div>
+              <p class="eyebrow">Франшиза</p>
+              <h2 class="title">Формати</h2>
+              <p class="section-head__lead">
+                Обери простір під свій бюджет — від компактного острівця до
+                повноцінного кафе з посадковими місцями.
+              </p>
             </div>
-            <div class="slider__buttons">
-              <div class="swiper__button-prev swiper__btn">
-                <svg class="icon icon-arrow">
-                  <use xlink:href="#icon-arrow"></use>
-                </svg>
-              </div>
-              <div class="swiper__button-next swiper__btn">
-                <svg class="icon icon-arrow">
-                  <use xlink:href="#icon-arrow"></use>
-                </svg>
-              </div>
+            <div class="carousel-nav" data-carousel-nav>
+              <button class="icon-btn icon-btn--outline" type="button" data-dir="-1" aria-label="Попередній формат">
+                <svg class="icon icon--flip"><use href="#i-arrow" /></svg>
+              </button>
+              <button class="icon-btn icon-btn--outline" type="button" data-dir="1" aria-label="Наступний формат">
+                <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
             </div>
-            <div class="slider__pag">
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
+          </header>
+
+          <ul class="formats__track" data-carousel data-reveal tabindex="0" aria-label="Формати пекарень">
+            <li class="format">
+              <div class="format__media">
+                <img
+                  src="./images/format-walrus.webp"
+                  width="560"
+                  height="693"
+                  alt="Інтерʼєр пекарні-кафе з вітриною та столиками"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="chip">до 120 м²</span>
+              </div>
+              <div class="format__body">
+                <h3 class="format__title">Walrus</h3>
+                <dl class="specs">
+                  <div><dt>Меню</dt><dd>Розширене</dd></div>
+                  <div><dt>Штат</dt><dd>2 касири, 2 пекарі, 2 помічники, 2 офіціанти</dd></div>
+                  <div><dt>Посадка</dt><dd class="yes">Є посадкові місця</dd></div>
+                </dl>
+              </div>
+            </li>
+            <li class="format">
+              <div class="format__media">
+                <img
+                  src="./images/format-horseshoe.webp"
+                  width="329"
+                  height="424"
+                  alt="Компактна пекарня з прилавком і меню на стіні"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="chip">до 25 м²</span>
+              </div>
+              <div class="format__body">
+                <h3 class="format__title">Horseshoe</h3>
+                <dl class="specs">
+                  <div><dt>Меню</dt><dd>Найпопулярніші позиції</dd></div>
+                  <div><dt>Штат</dt><dd>2 касири, 2 пекарі, 1 помічник</dd></div>
+                  <div><dt>Посадка</dt><dd>Без посадкових місць</dd></div>
+                </dl>
+              </div>
+            </li>
+            <li class="format">
+              <div class="format__media">
+                <img
+                  src="./images/format-handlebar.webp"
+                  width="329"
+                  height="424"
+                  alt="Острівець із вітриною хліба та круасанів"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="chip">до 15 м²</span>
+              </div>
+              <div class="format__body">
+                <h3 class="format__title">Handlebar</h3>
+                <dl class="specs">
+                  <div><dt>Меню</dt><dd>Найпопулярніші позиції</dd></div>
+                  <div><dt>Штат</dt><dd>1 продавець, 1 пекар, 1 помічник</dd></div>
+                  <div><dt>Посадка</dt><dd>Без посадкових місць</dd></div>
+                </dl>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
-      <!-- #endregion -->
-      <!-- #region Section Contact -->
-      <section class="s-contact section" id="s-contact">
-        <div class="container s-contact__container">
-          <div class="s-contact__box">
-            <h2 class="s-contact__title s-title">
-              Приєднуйся до мережі пекарень
-            </h2>
-            <p class="s-contact__desc">
-              Заповни форму, щоб ми звʼязались з тобою!
-            </p>
-            <div class="s-contact__form">
-              <form class="form-call">
-                <label class="form-call__label">
-                  <input
-                    class="form-call__input"
-                    type="text"
-                    name="name"
-                    placeholder="Ім’я"
-                  />
-                </label>
-                <label class="form-call__label">
-                  <input
-                    class="form-call__input"
-                    type="tel"
-                    name="phone"
-                    placeholder="Телефон"
-                  />
-                </label>
-                <label class="form-call__label">
-                  <input
-                    class="form-call__input"
-                    type="text"
-                    name="email"
-                    placeholder="Електронна пошта"
-                  />
-                </label>
-                <div class="form-call__btn">
-                  <button class="btn-order-call js-show-window-succeed" type="submit">
-                    <span>Замовити дзвінок</span>
-                  </button>
+
+      <!-- Contact -->
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="contact__panel" data-reveal>
+            <div class="contact__form-wrap">
+              <p class="eyebrow eyebrow--light">Співпраця</p>
+              <h2 class="title title--light">Приєднуйся до мережі <em>пекарень</em></h2>
+              <p class="contact__lead">Заповни форму, і ми звʼяжемося з тобою найближчим часом.</p>
+
+              <form class="form" novalidate data-form>
+                <div class="field">
+                  <input class="field__input" id="c-name" name="name" type="text" autocomplete="name" placeholder=" " required minlength="2" />
+                  <label class="field__label" for="c-name">Імʼя</label>
                 </div>
-                <div class="form-call__info">
-                  Натискаючи на кнопку я погоджуюсь
-                  <a class="form-call__link" href="#">
-                    з політикою конфіденційності</a
-                  >
+                <div class="field">
+                  <input class="field__input" id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" " required pattern="\+?[0-9 \(\)\-]{9,}" />
+                  <label class="field__label" for="c-phone">Телефон</label>
                 </div>
+                <div class="field">
+                  <input class="field__input" id="c-email" name="email" type="email" autocomplete="email" placeholder=" " />
+                  <label class="field__label" for="c-email">Електронна пошта (необовʼязково)</label>
+                </div>
+                <button class="btn btn--accent btn--lg btn--block" type="submit">Замовити дзвінок</button>
+                <p class="form__note">
+                  Натискаючи кнопку, я погоджуюсь із
+                  <a href="#">політикою конфіденційності</a>
+                </p>
               </form>
             </div>
-          </div>
-          <div class="s-contact__map">
-            <iframe
-              class="map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1640531314047!2d30.491233500000003!3d50.4566697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce637bfe1717%3A0x5370c2254ad1b952!2z0LLRg9C70LjRhtGPINCh0ZbRh9C-0LLQuNGFINCh0YLRgNGW0LvRjNGG0ZbQsiwgNTQsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1699201351703!5m2!1suk!2sua"
-              width="603"
-              height="595"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+
+            <div class="contact__map" data-map>
+              <div class="map-placeholder">
+                <svg class="icon"><use href="#i-pin" /></svg>
+                <span>м. Київ, вул. Січових Стрільців, 54</span>
+              </div>
+              <iframe
+                title="Shop Bakery на карті"
+                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1640531314047!2d30.491233500000003!3d50.4566697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce637bfe1717%3A0x5370c2254ad1b952!2z0LLRg9C70LjRhtGPINCh0ZbRh9C-0LLQuNGFINCh0YLRgNGW0LvRjNGG0ZbQsiwgNTQsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1699201351703!5m2!1suk!2sua"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
-      <!-- #endregion -->
     </main>
-    <!-- #endregion -->
-    <!-- #region Footer -->
-    <footer class="footer">
-      <div class="container footer__container">
-        <a class="footer__logo" href="#">
-          <div class="logo">
-            <svg
-              class="logo__svg"
-              viewBox="0 0 108 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.85938 10.6328L4.07812 9.55469C2.96094 8.875 2.16406 8.20703 1.6875 7.55078C1.21875 6.88672 0.984375 6.125 0.984375 5.26562C0.984375 3.97656 1.42969 2.92969 2.32031 2.125C3.21875 1.32031 4.38281 0.917969 5.8125 0.917969C7.17969 0.917969 8.43359 1.30078 9.57422 2.06641V4.72656C8.39453 3.59375 7.125 3.02734 5.76562 3.02734C5 3.02734 4.37109 3.20703 3.87891 3.56641C3.38672 3.91797 3.14062 4.37109 3.14062 4.92578C3.14062 5.41797 3.32031 5.87891 3.67969 6.30859C4.03906 6.73828 4.62109 7.1875 5.42578 7.65625L7.21875 8.71094C9.21875 9.89844 10.2188 11.4141 10.2188 13.2578C10.2188 14.5703 9.77734 15.6367 8.89453 16.457C8.01953 17.2773 6.87891 17.6875 5.47266 17.6875C3.85547 17.6875 2.38281 17.1914 1.05469 16.1992V13.2227C2.32031 14.8242 3.78516 15.625 5.44922 15.625C6.18359 15.625 6.79297 15.4219 7.27734 15.0156C7.76953 14.6016 8.01562 14.0859 8.01562 13.4688C8.01562 12.4688 7.29688 11.5234 5.85938 10.6328ZM24.3398 1.12891H26.6836V17.5H24.3398V10.375H15.1406V17.5H12.7969V1.12891H15.1406V8.20703H24.3398V1.12891ZM38.3438 0.894531C40.875 0.894531 42.9805 1.69531 44.6602 3.29688C46.3477 4.89844 47.1914 6.90625 47.1914 9.32031C47.1914 11.7344 46.3398 13.7344 44.6367 15.3203C42.9414 16.8984 40.8008 17.6875 38.2148 17.6875C35.7461 17.6875 33.6875 16.8984 32.0391 15.3203C30.3984 13.7344 29.5781 11.75 29.5781 9.36719C29.5781 6.92188 30.4062 4.89844 32.0625 3.29688C33.7188 1.69531 35.8125 0.894531 38.3438 0.894531ZM38.4375 3.12109C36.5625 3.12109 35.0195 3.70703 33.8086 4.87891C32.6055 6.05078 32.0039 7.54688 32.0039 9.36719C32.0039 11.1328 32.6094 12.6016 33.8203 13.7734C35.0312 14.9453 36.5469 15.5312 38.3672 15.5312C40.1953 15.5312 41.7188 14.9336 42.9375 13.7383C44.1641 12.543 44.7773 11.0547 44.7773 9.27344C44.7773 7.53906 44.1641 6.08203 42.9375 4.90234C41.7188 3.71484 40.2188 3.12109 38.4375 3.12109ZM49.9336 17.5V1.10547H55.125C56.6875 1.10547 57.9336 1.52734 58.8633 2.37109C59.793 3.21484 60.2578 4.34766 60.2578 5.76953C60.2578 6.72266 60.0195 7.56641 59.543 8.30078C59.0664 9.03516 58.4141 9.57031 57.5859 9.90625C56.7578 10.2344 55.5703 10.3984 54.0234 10.3984H52.2891V17.5H49.9336ZM54.7148 3.19141H52.2891V8.3125H54.8555C55.8086 8.3125 56.543 8.08984 57.0586 7.64453C57.5742 7.19141 57.832 6.54688 57.832 5.71094C57.832 4.03125 56.793 3.19141 54.7148 3.19141ZM16.875 40.8945C16.875 42.293 16.3945 43.4102 15.4336 44.2461C14.4805 45.082 13.1445 45.5 11.4258 45.5H2.03906V29.2578H9.89062C10.9062 29.2578 11.7891 29.3555 12.5391 29.5508C13.2969 29.7461 13.9062 30.0156 14.3672 30.3594C14.8281 30.6953 15.1719 31.0938 15.3984 31.5547C15.625 32.0156 15.7383 32.5195 15.7383 33.0664C15.7383 33.6602 15.6211 34.2109 15.3867 34.7188C15.1523 35.2188 14.8594 35.6328 14.5078 35.9609C14.1641 36.2812 13.8164 36.5078 13.4648 36.6406C14.5742 37.0781 15.418 37.6328 15.9961 38.3047C16.582 38.9688 16.875 39.832 16.875 40.8945ZM11.1562 33.9336C11.1562 33.1523 10.8984 32.6328 10.3828 32.375C9.86719 32.1172 9.0625 31.9883 7.96875 31.9883H6.9375V35.8789H7.99219C9.10938 35.8789 9.91406 35.75 10.4062 35.4922C10.9062 35.2344 11.1562 34.7148 11.1562 33.9336ZM11.9531 40.6953C11.9531 39.3047 10.9453 38.6094 8.92969 38.6094H6.9375V42.7695H8.92969C10.9453 42.7695 11.9531 42.0781 11.9531 40.6953ZM37.1484 45.5H32.1328L30.8086 42.207H23.7539L22.4062 45.5H17.3906L24.5742 29.2578H29.9883L37.1484 45.5ZM29.6836 39.3828L27.3047 33.4531L24.9023 39.3828H29.6836ZM56.3906 45.5H50.4141L44.2031 37.8945V45.5H39.3047V29.2578H44.2031V36.5234L50.0859 29.2578H55.4062L49.3594 36.8633L56.3906 45.5ZM70.7695 45.5H58.5234V29.2578H70.5703V32.5156H63.4219V35.4922H70.2422V38.7617H63.4219V42.2305H70.7695V45.5ZM89.7891 45.5H84.5273L83.25 42.6172C82.7812 41.5625 82.3594 40.793 81.9844 40.3086C81.6094 39.8164 81.2422 39.5039 80.8828 39.3711C80.5312 39.2305 80.0742 39.1602 79.5117 39.1602H78.9609V45.5H74.0625V29.2578H82.3945C83.7383 29.2578 84.8398 29.5312 85.6992 30.0781C86.5586 30.625 87.1758 31.2891 87.5508 32.0703C87.9336 32.8516 88.125 33.5938 88.125 34.2969C88.125 35.1172 87.9648 35.8125 87.6445 36.3828C87.332 36.9453 87 37.3555 86.6484 37.6133C86.2969 37.8711 85.9023 38.1172 85.4648 38.3516C85.9883 38.6562 86.418 39.0195 86.7539 39.4414C87.0977 39.8555 87.5625 40.6992 88.1484 41.9727L89.7891 45.5ZM83.1328 34.3906C83.1328 33.6406 82.8867 33.1172 82.3945 32.8203C81.9023 32.5234 81.1016 32.375 79.9922 32.375H78.9609V36.2891H80.0156C81.2109 36.2891 82.0273 36.1602 82.4648 35.9023C82.9102 35.6367 83.1328 35.1328 83.1328 34.3906ZM107.156 29.2578L100.793 38.0586V45.5H95.8945V38.1523L89.4141 29.2578H94.5L98.2266 34.3672L101.965 29.2578H107.156Z"
-                fill="#FAF4EA"
-              />
-            </svg>
-          </div>
-        </a>
-        <div class="footer__nav">
-          <nav class="nav nav--footer">
-            <ul class="nav__list nav__list--rows">
-              <li class="nav__item">
-                <a class="nav__link link" href="">Наші традиції</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link link" href="">Шеф-кухарі</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link link" href="">Формати</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link link" href="">Контакти</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="footer__address">
-          <address class="address">
-            <ul class="address__list">
-              <li class="address__item">
-                <a class="address__link" href="tel:+380960000007"
-                  >+ 38 (096) 000 00 07</a
-                >
-              </li>
-              <li class="address__item">
-                <a class="address__link" href="mailto:shopbakery@gmail.com"
-                  >shopbakery@gmail.com</a
-                >
-              </li>
-              <li class="address__item">
-                <a
-                  class="address__link"
-                  href="https://maps.app.goo.gl/ECa5WamYEjtCKeho6"
-                  target="_blank"
-                  >Україна, м. Київ, вул. Січових Стрільців 54</a
-                >
-              </li>
-            </ul>
-            <div class="footer__social">
-              <ul class="social">
-                <li class="social__item">
-                  <a href="#" class="social__link">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_308_49)">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M0 16C0 7.16347 7.16347 0 16 0C24.8365 0 32 7.16347 32 16C32 24.8365 24.8365 32 16 32C7.16347 32 0 24.8365 0 16ZM17.6677 25.4077V16.7028H20.0706L20.3891 13.7031H17.6677L17.6718 12.2017C17.6718 11.4193 17.7461 11.0001 18.8699 11.0001H20.3721V8H17.9688C15.0821 8 14.0661 9.4552 14.0661 11.9024V13.7034H12.2667V16.7031H14.0661V25.4077H17.6677Z"
-                          fill="#FAF4EA"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_308_49">
-                          <rect width="32" height="32" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a href="#" class="social__link">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_308_51)">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M0 16C0 7.16347 7.16347 0 16 0C24.8365 0 32 7.16347 32 16C32 24.8365 24.8365 32 16 32C7.16347 32 0 24.8365 0 16ZM16.0008 7.46667C13.6833 7.46667 13.3924 7.4768 12.4822 7.5182C11.5737 7.5598 10.9537 7.70367 10.4111 7.91467C9.8498 8.1326 9.37373 8.4242 8.8994 8.89867C8.42473 9.373 8.13313 9.84907 7.91447 10.4101C7.70293 10.9529 7.55893 11.5732 7.51807 12.4813C7.47733 13.3915 7.46667 13.6825 7.46667 16.0001C7.46667 18.3176 7.477 18.6076 7.5182 19.5178C7.56 20.4263 7.7038 21.0463 7.91467 21.5889C8.1328 22.1502 8.42433 22.6263 8.89887 23.1006C9.373 23.5753 9.84907 23.8675 10.41 24.0855C10.9529 24.2965 11.5732 24.4403 12.4815 24.4819C13.3917 24.5234 13.6824 24.5335 15.9997 24.5335C18.3175 24.5335 18.6074 24.5234 19.5177 24.4819C20.4261 24.4403 21.0469 24.2965 21.5899 24.0855C22.1509 23.8675 22.6263 23.5753 23.1004 23.1006C23.5751 22.6263 23.8667 22.1502 24.0853 21.5891C24.2951 21.0463 24.4391 20.4261 24.4818 19.518C24.5227 18.6077 24.5333 18.3176 24.5333 16.0001C24.5333 13.6825 24.5227 13.3917 24.4818 12.4815C24.4391 11.573 24.2951 10.9529 24.0853 10.4103C23.8667 9.84907 23.5751 9.373 23.1004 8.89867C22.6257 8.424 22.1511 8.13247 21.5893 7.91467C21.0453 7.70367 20.4249 7.5598 19.5164 7.5182C18.6061 7.4768 18.3164 7.46667 15.9981 7.46667H16.0008Z"
-                          fill="#FAF4EA"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M15.2349 9.00506C15.4621 9.00473 15.7157 9.00506 16.0005 9.00506C18.2789 9.00506 18.5489 9.01326 19.4487 9.05413C20.2807 9.0922 20.7323 9.2312 21.0331 9.348C21.4313 9.50266 21.7152 9.68753 22.0137 9.9862C22.3123 10.2849 22.4973 10.5693 22.6523 10.9676C22.7691 11.268 22.9083 11.7196 22.9461 12.5516C22.987 13.4511 22.9959 13.7214 22.9959 15.9987C22.9959 18.2761 22.987 18.5463 22.9461 19.4459C22.9081 20.2779 22.7691 20.7295 22.6523 21.0299C22.4976 21.4281 22.3123 21.7117 22.0137 22.0102C21.715 22.3089 21.4315 22.4937 21.0331 22.6484C20.7326 22.7657 20.2807 22.9044 19.4487 22.9425C18.5491 22.9833 18.2789 22.9922 16.0005 22.9922C13.7219 22.9922 13.4518 22.9833 12.5523 22.9425C11.7203 22.9041 11.2687 22.765 10.9677 22.6482C10.5695 22.4935 10.285 22.3087 9.98635 22.01C9.68768 21.7113 9.50282 21.4276 9.34782 21.0292C9.23102 20.7287 9.09182 20.2772 9.05395 19.4452C9.01302 18.5456 9.00488 18.2754 9.00488 15.9966C9.00488 13.7178 9.01302 13.449 9.05395 12.5495C9.09195 11.7175 9.23102 11.2659 9.34782 10.9651C9.50248 10.5669 9.68768 10.2824 9.98635 9.98373C10.285 9.68506 10.5695 9.5002 10.9677 9.34513C11.2685 9.2278 11.7203 9.08913 12.5523 9.05093C13.3395 9.0154 13.6445 9.00473 15.2349 9.00293V9.00506ZM20.5555 10.4219C19.9902 10.4219 19.5315 10.8801 19.5315 11.4456C19.5315 12.0109 19.9902 12.4696 20.5555 12.4696C21.1209 12.4696 21.5795 12.0109 21.5795 11.4456C21.5795 10.8803 21.1209 10.4219 20.5555 10.4219ZM16.0005 11.6184C13.5803 11.6184 11.6182 13.5806 11.6182 16.0007C11.6182 18.4208 13.5803 20.3821 16.0005 20.3821C18.4206 20.3821 20.382 18.4208 20.382 16.0007C20.382 13.5806 18.4206 11.6184 16.0005 11.6184Z"
-                          fill="#FAF4EA"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M16.0007 13.1553C17.5716 13.1553 18.8452 14.4287 18.8452 15.9997C18.8452 17.5706 17.5716 18.8442 16.0007 18.8442C14.4296 18.8442 13.1562 17.5706 13.1562 15.9997C13.1562 14.4287 14.4296 13.1553 16.0007 13.1553Z"
-                          fill="#FAF4EA"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_308_51">
-                          <rect width="32" height="32" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </address>
-        </div>
-        <div class="footer__info">
-          <a class="footer__privacy" href="#" target="_blank"
-            >Політика конфіденційності</a
-          >
-          <p class="footer__copy">&copy; 2022 Дані захищені</p>
-        </div>
-      </div>
-      <div class="footer__img-f">
-        <img src="./images/more-img1.png" alt="Optional img" />
-      </div>
-      <div class="footer__img-s">
-        <img src="./images/more-img2.png" alt="Optional img" />
-      </div>
-    </footer>
-    <!-- #endregion -->
 
-    <!-- #region Menu -->
-    <div class="menu" id="js-menu">
-      <div class="menu__head">
-        <div class="menu__logo">
-          <div class="logo">
-            <svg
-              class="logo__svg"
-              viewBox="0 0 108 46"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.85938 10.6328L4.07812 9.55469C2.96094 8.875 2.16406 8.20703 1.6875 7.55078C1.21875 6.88672 0.984375 6.125 0.984375 5.26562C0.984375 3.97656 1.42969 2.92969 2.32031 2.125C3.21875 1.32031 4.38281 0.917969 5.8125 0.917969C7.17969 0.917969 8.43359 1.30078 9.57422 2.06641V4.72656C8.39453 3.59375 7.125 3.02734 5.76562 3.02734C5 3.02734 4.37109 3.20703 3.87891 3.56641C3.38672 3.91797 3.14062 4.37109 3.14062 4.92578C3.14062 5.41797 3.32031 5.87891 3.67969 6.30859C4.03906 6.73828 4.62109 7.1875 5.42578 7.65625L7.21875 8.71094C9.21875 9.89844 10.2188 11.4141 10.2188 13.2578C10.2188 14.5703 9.77734 15.6367 8.89453 16.457C8.01953 17.2773 6.87891 17.6875 5.47266 17.6875C3.85547 17.6875 2.38281 17.1914 1.05469 16.1992V13.2227C2.32031 14.8242 3.78516 15.625 5.44922 15.625C6.18359 15.625 6.79297 15.4219 7.27734 15.0156C7.76953 14.6016 8.01562 14.0859 8.01562 13.4688C8.01562 12.4688 7.29688 11.5234 5.85938 10.6328ZM24.3398 1.12891H26.6836V17.5H24.3398V10.375H15.1406V17.5H12.7969V1.12891H15.1406V8.20703H24.3398V1.12891ZM38.3438 0.894531C40.875 0.894531 42.9805 1.69531 44.6602 3.29688C46.3477 4.89844 47.1914 6.90625 47.1914 9.32031C47.1914 11.7344 46.3398 13.7344 44.6367 15.3203C42.9414 16.8984 40.8008 17.6875 38.2148 17.6875C35.7461 17.6875 33.6875 16.8984 32.0391 15.3203C30.3984 13.7344 29.5781 11.75 29.5781 9.36719C29.5781 6.92188 30.4062 4.89844 32.0625 3.29688C33.7188 1.69531 35.8125 0.894531 38.3438 0.894531ZM38.4375 3.12109C36.5625 3.12109 35.0195 3.70703 33.8086 4.87891C32.6055 6.05078 32.0039 7.54688 32.0039 9.36719C32.0039 11.1328 32.6094 12.6016 33.8203 13.7734C35.0312 14.9453 36.5469 15.5312 38.3672 15.5312C40.1953 15.5312 41.7188 14.9336 42.9375 13.7383C44.1641 12.543 44.7773 11.0547 44.7773 9.27344C44.7773 7.53906 44.1641 6.08203 42.9375 4.90234C41.7188 3.71484 40.2188 3.12109 38.4375 3.12109ZM49.9336 17.5V1.10547H55.125C56.6875 1.10547 57.9336 1.52734 58.8633 2.37109C59.793 3.21484 60.2578 4.34766 60.2578 5.76953C60.2578 6.72266 60.0195 7.56641 59.543 8.30078C59.0664 9.03516 58.4141 9.57031 57.5859 9.90625C56.7578 10.2344 55.5703 10.3984 54.0234 10.3984H52.2891V17.5H49.9336ZM54.7148 3.19141H52.2891V8.3125H54.8555C55.8086 8.3125 56.543 8.08984 57.0586 7.64453C57.5742 7.19141 57.832 6.54688 57.832 5.71094C57.832 4.03125 56.793 3.19141 54.7148 3.19141ZM16.875 40.8945C16.875 42.293 16.3945 43.4102 15.4336 44.2461C14.4805 45.082 13.1445 45.5 11.4258 45.5H2.03906V29.2578H9.89062C10.9062 29.2578 11.7891 29.3555 12.5391 29.5508C13.2969 29.7461 13.9062 30.0156 14.3672 30.3594C14.8281 30.6953 15.1719 31.0938 15.3984 31.5547C15.625 32.0156 15.7383 32.5195 15.7383 33.0664C15.7383 33.6602 15.6211 34.2109 15.3867 34.7188C15.1523 35.2188 14.8594 35.6328 14.5078 35.9609C14.1641 36.2812 13.8164 36.5078 13.4648 36.6406C14.5742 37.0781 15.418 37.6328 15.9961 38.3047C16.582 38.9688 16.875 39.832 16.875 40.8945ZM11.1562 33.9336C11.1562 33.1523 10.8984 32.6328 10.3828 32.375C9.86719 32.1172 9.0625 31.9883 7.96875 31.9883H6.9375V35.8789H7.99219C9.10938 35.8789 9.91406 35.75 10.4062 35.4922C10.9062 35.2344 11.1562 34.7148 11.1562 33.9336ZM11.9531 40.6953C11.9531 39.3047 10.9453 38.6094 8.92969 38.6094H6.9375V42.7695H8.92969C10.9453 42.7695 11.9531 42.0781 11.9531 40.6953ZM37.1484 45.5H32.1328L30.8086 42.207H23.7539L22.4062 45.5H17.3906L24.5742 29.2578H29.9883L37.1484 45.5ZM29.6836 39.3828L27.3047 33.4531L24.9023 39.3828H29.6836ZM56.3906 45.5H50.4141L44.2031 37.8945V45.5H39.3047V29.2578H44.2031V36.5234L50.0859 29.2578H55.4062L49.3594 36.8633L56.3906 45.5ZM70.7695 45.5H58.5234V29.2578H70.5703V32.5156H63.4219V35.4922H70.2422V38.7617H63.4219V42.2305H70.7695V45.5ZM89.7891 45.5H84.5273L83.25 42.6172C82.7812 41.5625 82.3594 40.793 81.9844 40.3086C81.6094 39.8164 81.2422 39.5039 80.8828 39.3711C80.5312 39.2305 80.0742 39.1602 79.5117 39.1602H78.9609V45.5H74.0625V29.2578H82.3945C83.7383 29.2578 84.8398 29.5312 85.6992 30.0781C86.5586 30.625 87.1758 31.2891 87.5508 32.0703C87.9336 32.8516 88.125 33.5938 88.125 34.2969C88.125 35.1172 87.9648 35.8125 87.6445 36.3828C87.332 36.9453 87 37.3555 86.6484 37.6133C86.2969 37.8711 85.9023 38.1172 85.4648 38.3516C85.9883 38.6562 86.418 39.0195 86.7539 39.4414C87.0977 39.8555 87.5625 40.6992 88.1484 41.9727L89.7891 45.5ZM83.1328 34.3906C83.1328 33.6406 82.8867 33.1172 82.3945 32.8203C81.9023 32.5234 81.1016 32.375 79.9922 32.375H78.9609V36.2891H80.0156C81.2109 36.2891 82.0273 36.1602 82.4648 35.9023C82.9102 35.6367 83.1328 35.1328 83.1328 34.3906ZM107.156 29.2578L100.793 38.0586V45.5H95.8945V38.1523L89.4141 29.2578H94.5L98.2266 34.3672L101.965 29.2578H107.156Z"
-              />
-            </svg>
-          </div>
-        </div>
-        <div class="close-menu" id="js-close-menu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M9 6L15 12L21 6"
-              stroke="#31261A"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-            <path
-              d="M9 18L15 12L21 18"
-              stroke="#31261A"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-        </div>
-      </div>
-      <div class="menu__body">
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#" class="nav__link nav__link--menu">Наші традиції</a>
+    <!-- Footer -->
+    <footer class="footer">
+      <img class="footer__bread footer__bread--l" src="./images/bread-2.webp" width="600" height="400" alt="" loading="lazy" decoding="async" />
+      <img class="footer__bread footer__bread--r" src="./images/bread-1.webp" width="600" height="400" alt="" loading="lazy" decoding="async" />
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a href="#top" class="logo logo--footer" aria-label="Shop Bakery — на початок">
+            <svg class="logo__svg"><use href="#i-logo" /></svg>
+          </a>
+          <p class="footer__tagline">Сучасна пекарня з традиційним смаком.</p>
+          <ul class="social">
+            <li>
+              <a href="#" class="social__link" aria-label="Facebook">
+                <svg><use href="#i-facebook" /></svg>
+              </a>
             </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link nav__link--menu">Шеф-кухарі</a>
-            </li>
-            <li class="nav__item"><a href="#" class="nav__link">Формати</a></li>
-            <li class="nav__item">
-              <a href="#" class="nav__link nav__link--menu">Контакти</a>
+            <li>
+              <a href="#" class="social__link" aria-label="Instagram">
+                <svg><use href="#i-instagram" /></svg>
+              </a>
             </li>
           </ul>
+        </div>
+        <nav aria-label="Навігація у футері">
+          <h2 class="footer__heading">Навігація</h2>
+          <ul class="footer__list">
+            <li><a href="#about">Наші традиції</a></li>
+            <li><a href="#chefs">Шеф-кухарі</a></li>
+            <li><a href="#formats">Формати</a></li>
+            <li><a href="#contact">Контакти</a></li>
+          </ul>
         </nav>
+        <address>
+          <h2 class="footer__heading">Контакти</h2>
+          <ul class="footer__list">
+            <li><a href="tel:+380960000007">+38 (096) 000 00 07</a></li>
+            <li><a href="mailto:shopbakery@gmail.com">shopbakery@gmail.com</a></li>
+            <li>
+              <a href="https://maps.app.goo.gl/ECa5WamYEjtCKeho6" target="_blank" rel="noopener">
+                Україна, м. Київ, вул. Січових Стрільців, 54
+              </a>
+            </li>
+          </ul>
+        </address>
       </div>
-      <div class="menu__img">
-        <img
-          class="optional-img"
-          src="./images/menu-bread.png"
-          alt="Картинка з хлібом"
-        />
+      <div class="container footer__bottom">
+        <p>&copy; <span data-year>2025</span> Shop Bakery. Дані захищені.</p>
+        <a href="#">Політика конфіденційності</a>
       </div>
-    </div>
-    <!-- #endregion -->
+    </footer>
 
-    <!-- #region Blur Screen -->
-    <div class="blur-screen" id="js-blur-screen"></div>
-    <!-- #endregion -->
-
-    <!-- #region Modal window order call -->
-    <div class="w-call-order" id="js-order-window">
-      <div class="w-call-order__wrapper">
-        <div class="w-call-order__close" id="js-close-order-window">
-          <div class="close-menu">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-            >
-              <path
-                d="M8 8L16 16L24 8"
-                stroke="#31261A"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M8 24L16 16L24 24"
-                stroke="#31261A"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-          </div>
-        </div>
-        <div class="w-call-order__body">
-          <h4 class="w-call-order__title">Замовити дзвінок</h4>
-          <div class="w-call-order__desc">
-            Залишіть заявку та наш спеціаліст зв'яжеться з Вами!
-          </div>
-          <div class="w-call-order__form">
-            <form class="form-call">
-              <label class="form-call__label">
-                <input
-                  class="form-call__input"
-                  type="text"
-                  name="name"
-                  placeholder="Ім’я"
-                />
-              </label>
-              <label class="form-call__label">
-                <input
-                  class="form-call__input"
-                  type="tel"
-                  name="phone"
-                  placeholder="Телефон"
-                />
-              </label>
-              <label class="form-call__label">
-                <input
-                  class="form-call__input"
-                  type="text"
-                  name="email"
-                  placeholder="Електронна пошта"
-                />
-              </label>
-              <div class="form-call__btn">
-                <button class="btn-order-call js-show-window-succeed" type="submit">
-                  <span>Замовити дзвінок</span>
-                </button>
-              </div>
-              <div class="form-call__info">
-                Натискаючи на кнопку я погоджуюсь
-                <a class="form-call__link" href="#">
-                  з політикою конфіденційності</a
-                >
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="w-call-order__img">
-          <img
-            class="optional-img"
-            src="./images/menu-bread.png"
-            alt="Картинка з хлібом"
-          />
-        </div>
+    <!-- Mobile menu -->
+    <dialog class="drawer" id="menu" aria-label="Меню">
+      <div class="drawer__head">
+        <svg class="logo__svg drawer__logo" aria-hidden="true"><use href="#i-logo" /></svg>
+        <button class="icon-btn" type="button" data-close aria-label="Закрити меню">
+          <svg class="icon"><use href="#i-close" /></svg>
+        </button>
       </div>
-    </div>
-    <!-- #endregion -->
+      <nav aria-label="Мобільна навігація">
+        <ul class="drawer__list">
+          <li><a href="#about" data-close>Наші традиції</a></li>
+          <li><a href="#chefs" data-close>Шеф-кухарі</a></li>
+          <li><a href="#formats" data-close>Формати</a></li>
+          <li><a href="#contact" data-close>Контакти</a></li>
+        </ul>
+      </nav>
+      <button class="btn btn--primary btn--lg btn--block" type="button" data-open="order">
+        Замовити дзвінок
+      </button>
+      <img class="drawer__img" src="./images/bread-small.webp" width="186" height="241" alt="" loading="lazy" decoding="async" />
+    </dialog>
 
-    <!-- #region Call accepted -->
-    <div class="call-accepted">
-      <div class="call-accepted__message">Очікуйте на дзвінок менеджера:)</div>
+    <!-- Order call modal -->
+    <dialog class="modal" id="order" aria-labelledby="order-title">
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Закрити">
+        <svg class="icon"><use href="#i-close" /></svg>
+      </button>
+      <h2 class="modal__title" id="order-title">Замовити <em>дзвінок</em></h2>
+      <p class="modal__lead">Залиште заявку — наш спеціаліст звʼяжеться з вами.</p>
+      <form class="form form--light" novalidate data-form>
+        <div class="field">
+          <input class="field__input" id="o-name" name="name" type="text" autocomplete="name" placeholder=" " required minlength="2" />
+          <label class="field__label" for="o-name">Імʼя</label>
+        </div>
+        <div class="field">
+          <input class="field__input" id="o-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" " required pattern="\+?[0-9 \(\)\-]{9,}" />
+          <label class="field__label" for="o-phone">Телефон</label>
+        </div>
+        <div class="field">
+          <input class="field__input" id="o-email" name="email" type="email" autocomplete="email" placeholder=" " />
+          <label class="field__label" for="o-email">Електронна пошта (необовʼязково)</label>
+        </div>
+        <button class="btn btn--primary btn--lg btn--block" type="submit">Надіслати заявку</button>
+        <p class="form__note">
+          Натискаючи кнопку, я погоджуюсь із
+          <a href="#">політикою конфіденційності</a>
+        </p>
+      </form>
+      <img class="modal__img" src="./images/bread-small.webp" width="186" height="241" alt="" loading="lazy" decoding="async" />
+    </dialog>
+
+    <!-- Toast -->
+    <div class="toast" role="status" aria-live="polite" data-toast>
+      <svg class="icon"><use href="#i-check" /></svg>
+      <span>Дякуємо! Очікуйте на дзвінок менеджера.</span>
     </div>
-    <!-- #endregion -->
   </body>
 </html>
